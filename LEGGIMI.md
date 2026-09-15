@@ -1,61 +1,64 @@
-# tintitans-privacy
+# tintitans-official
 
-**L'informativa sulla privacy di TinTitans, pubblicata su GitHub Pages.**
+**Le pagine pubbliche di TinTitans**, servite da GitHub Pages a
+`https://marcocola87.github.io/tintitans-official/`.
 
-Questo repository esiste per una ragione sola: Google Play pretende che
-l'informativa stia a un **indirizzo pubblico raggiungibile da chiunque**, anche
-da chi non ha installato il gioco. Il repository del gioco è privato, quindi
-serviva un posto pubblico separato.
+Il repository del gioco è privato. Questo è pubblico perché Google Play pretende
+che certe pagine siano **raggiungibili da chiunque**, anche da chi non ha
+installato niente.
 
-## Come si pubblica
+## Cosa c'è
 
-1. Crea il repository su GitHub: **pubblico**, nome `tintitans-privacy`
-2. Dalla cartella di questo file:
+| file | indirizzo | a che serve |
+|---|---|---|
+| `index.html` | `/` | l'informativa sulla privacy, italiano e inglese |
+| `elimina-account.html` | `/elimina-account.html` | come cancellare il proprio account |
 
-   ```
-   git init
-   git add -A
-   git commit -m "L'informativa sulla privacy"
-   git branch -M main
-   git remote add origin https://github.com/marcocola87/tintitans-privacy.git
-   git push -u origin main
-   ```
+Tutti e due gli indirizzi sono **incollati nel Play Console** — il primo in
+«Norme sulla privacy», il secondo in «Sicurezza dei dati». Cambiare i nomi dei
+file vuol dire aggiornarli anche là.
 
-3. Su GitHub: **Settings → Pages → Source: Deploy from a branch → main / (root)**
+## Perché si chiamava `tintitans-privacy`
 
-Dopo qualche minuto la pagina è a:
+Perché è nato per l'informativa e basta. Il 16 settembre 2026, mentre si
+compilava la scheda dello store, è stato rinominato in **`tintitans-official`**:
+il nome vecchio sarebbe stato stretto il giorno in cui qui dentro ci fosse
+qualcosa che privacy non è.
+
+**GitHub tiene in piedi i vecchi indirizzi** dopo un rinomina, quindi niente si è
+rotto. Ma è stato fatto **prima** che quegli indirizzi cominciassero a
+circolare davvero — cioè prima della pubblicazione — perché dopo sarebbe stato un
+giro di correzioni invece di dieci secondi.
+
+## Come si modifica
+
+Si modifica il file, si committa, si manda:
 
 ```
-https://marcocola87.github.io/tintitans-privacy/
+git add -A
+git commit -m "…"
+git push
 ```
 
-È quello l'indirizzo da incollare nel Play Console, in **Norme sulla privacy**.
-
-## Prima di pubblicare: due cose da sostituire
-
-Nel file `index.html` ci sono due segnaposto, uno per lingua:
+GitHub Pages ricostruisce da sé in un minuto o due. Lo stato si guarda con:
 
 ```
-[INDIRIZZO EMAIL DI CONTATTO]
-[CONTACT EMAIL ADDRESS]
+gh api repos/marcocola87/tintitans-official/pages/builds/latest
 ```
 
-**Vanno sostituiti con un indirizzo email vero**, perché è lì che arriveranno le
-richieste di cancellazione — ed è un obbligo, non una cortesia.
+## Regole per chi scrive qui dentro
 
-Conviene che sia un indirizzo **dedicato** e non quello personale di tutti i
-giorni: finisce su una pagina pubblica, quindi verrà raccolto dai robot che
-cercano indirizzi. Qualcosa come `tintitans@…` va benissimo.
+**Niente dipendenze.** Nessun Jekyll, nessun tema, nessun foglio di stile
+esterno: un file che si apre com'è, si legge sul telefono, e funziona in tema
+chiaro e scuro. Un'informativa che non si carica è un'informativa che non esiste.
 
-Lo stesso indirizzo serve anche nel Play Console come **email di assistenza**.
+**Tutto in due lingue**, italiano e inglese, come il gioco.
 
-## Perché è una pagina HTML e basta
+**L'indirizzo email è `tintitans-privacy@marcocola.com`**, e resta quello: è
+scritto nelle pagine e nel Play Console, e non ha niente a che vedere col nome
+del repository.
 
-Niente Jekyll, niente tema, niente dipendenze: un file che si apre com'è, si
-legge sul telefono, e funziona in tema chiaro e scuro. Un'informativa privacy che
-non si carica è un'informativa che non esiste.
-
-## Quando va aggiornata
+## Quando va aggiornata l'informativa
 
 Ogni volta che il gioco comincia a raccogliere qualcosa che prima non
 raccoglieva. In particolare:
@@ -67,3 +70,13 @@ raccoglieva. In particolare:
 - **se un giorno entrasse un qualunque strumento di analisi**, che oggi non c'è.
 
 E ogni volta si cambia la data di entrata in vigore, in cima.
+
+## Quel che potrebbe arrivare qui
+
+Il ragionamento sta in `documenti/23-il-sito-parcheggio-idee.md`, nel repository
+del gioco. In breve: la **classifica mondiale guardabile dal browser** — i dati
+si leggono già in pubblico — e, il giorno che ne varrà la pena, il **replay del
+record che si rigioca nel browser**, visto che Godot esporta anche per il web.
+
+Non prima della pubblicazione: un sito per un gioco che non si può scaricare è
+una vetrina davanti a un negozio chiuso.
