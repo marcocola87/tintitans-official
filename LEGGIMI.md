@@ -25,10 +25,17 @@ compilava la scheda dello store, è stato rinominato in **`tintitans-official`**
 il nome vecchio sarebbe stato stretto il giorno in cui qui dentro ci fosse
 qualcosa che privacy non è.
 
-**GitHub tiene in piedi i vecchi indirizzi** dopo un rinomina, quindi niente si è
-rotto. Ma è stato fatto **prima** che quegli indirizzi cominciassero a
-circolare davvero — cioè prima della pubblicazione — perché dopo sarebbe stato un
-giro di correzioni invece di dieci secondi.
+**E i vecchi indirizzi delle pagine NON rimandano al nuovo.** Verificato subito
+dopo il rinomina: `marcocola87.github.io/tintitans-privacy/` risponde picche.
+
+E' una distinzione che vale la pena sapere, perché è facile crederci al
+contrario: GitHub mantiene i rinvii per gli indirizzi del **repository**
+(`github.com/utente/nome`), **ma non per GitHub Pages**. Rinominare un
+repository serve le pagine da un indirizzo nuovo e basta — quello vecchio muore.
+
+Per questo è stato fatto **prima della pubblicazione**, quando i due indirizzi
+erano scritti in un posto solo: il Play Console. Farlo dopo avrebbe voluto dire
+due pagine morte in mano a chi cerca l'informativa.
 
 ## Come si modifica
 
