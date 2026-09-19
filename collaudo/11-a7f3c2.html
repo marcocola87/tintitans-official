@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+<title>TinTitans — collaudo dell’undicesimo giro</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0 16px 90px;
+    font: 16px/1.55 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1c1e21; background: #f4f5f7;
+  }
+  .foglio { max-width: 880px; margin: 0 auto; }
+  h1 { font-size: 26px; margin: 28px 0 4px; }
+  .sotto { color: #5b6169; margin: 0 0 20px; }
+  .nota {
+    background: #fff; border: 1px solid #d6dae0; border-left: 4px solid #4a7ab5;
+    border-radius: 6px; padding: 12px 16px; margin: 0 0 20px;
+  }
+  .nota p { margin: 6px 0; }
+  .nota p:first-child { margin-top: 0; }
+  .nota p:last-child { margin-bottom: 0; }
+  .punto {
+    background: #fff; border: 1px solid #d6dae0; border-radius: 8px;
+    padding: 14px 16px 16px; margin: 0 0 14px;
+  }
+  .testa { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .numero {
+    font: 700 15px/1 inherit; color: #fff; background: #4a7ab5;
+    border-radius: 999px; min-width: 26px; height: 26px;
+    display: inline-flex; align-items: center; justify-content: center;
+    flex: 0 0 auto;
+  }
+  .titolo { font-weight: 700; font-size: 17px; }
+  .tag {
+    font-size: 12px; text-transform: uppercase; letter-spacing: .04em;
+    background: #eceff3; border: 1px solid #d6dae0; border-radius: 4px;
+    padding: 2px 7px; color: #5b6169;
+  }
+  .tag.nuovo { background: #e7f0e9; border-color: #b6d3bf; color: #2b6b3f; }
+  .tag.torna { background: #fdf1e3; border-color: #e8cfa9; color: #96660f; }
+  .cosa { margin: 9px 0 0; }
+  .chiedo { margin: 9px 0 0; padding: 9px 12px; background: #f7f9fb;
+            border-left: 3px solid #c3c9d1; border-radius: 0 5px 5px 0; }
+  .chiedo b { color: #1c1e21; }
+  .giudizio { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .giudizio label {
+    border: 1px solid #c3c9d1; border-radius: 999px; padding: 7px 14px;
+    cursor: pointer; background: #fcfcfd; font-size: 15px;
+  }
+  .giudizio input { margin-right: 7px; }
+  textarea {
+    width: 100%; margin-top: 10px; min-height: 74px; padding: 9px 11px;
+    font: inherit; font-size: 15px; border: 1px solid #c3c9d1;
+    border-radius: 5px; background: #fcfcfd; resize: vertical;
+  }
+  textarea:focus, .giudizio label:focus-within {
+    outline: 2px solid #4a7ab5; outline-offset: -1px;
+  }
+  .barra {
+    position: sticky; bottom: 0; margin: 26px -16px 0; padding: 12px 16px;
+    background: #fffffff2; border-top: 1px solid #d6dae0;
+    display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+    backdrop-filter: blur(4px);
+  }
+  button {
+    font: 600 15px/1 inherit; padding: 12px 20px; border-radius: 6px;
+    border: 1px solid #33619b; background: #4a7ab5; color: #fff; cursor: pointer;
+  }
+  button:hover { background: #3d6aa1; }
+  #esito { color: #2b6b3f; font-weight: 600; }
+  code { font: 14px/1.4 ui-monospace, Consolas, monospace;
+         background: #eceff3; border-radius: 3px; padding: 1px 5px; }
+</style>
+</head>
+<body>
+<div class="foglio">
+
+<h1>Collaudo dell’undicesimo giro</h1>
+<p class="sotto">Build di sviluppo <code>0a9504b</code>, installata alle 08:20 —
+non quella che avevi quando hai fatto la prova veloce.</p>
+
+<div class="nota">
+  <p><b>I primi quattro punti sono le cose che mi hai segnalato stamattina.</b>
+  Le ho sistemate tutte e quattro; quel che chiedo qui è se adesso vanno.</p>
+  <p><b>Dal quinto in poi è il decimo giro che non hai ancora guardato.</b> La
+  «s» del logo, le vetrine, i detriti, il lucchetto, i crediti. Non li hai
+  saltati: non ci sei ancora arrivato.</p>
+  <p><b>Gli fps non te li chiedo più.</b> Li ho già letti dai diari della tua
+  sessione delle 07:22: <b>119–120 fissi</b>, con cali solo nel primo secondo di
+  ogni livello, cioè mentre carica. Quei diari però erano della build di prima,
+  con le ombre ancora corte. Gioca cinque minuti con questa e me li ripesco io
+  dal telefono — vedi il punto 11, che non ha niente da compilare.</p>
+  <p>Rispondi solo a quel che provi. Quel che salti non conta come «va bene»: lo
+  scrivo in fondo come non provato.</p>
+</div>
+
+<div class="punto" data-nome="1 · morire, e vederlo">
+  <div class="testa"><span class="numero">1</span>
+    <span class="titolo">Quando muori l’esplosione finisce di scoppiare</span>
+    <span class="tag torna">tuo riscontro di stamattina</span></div>
+  <p class="cosa">Mi avevi scritto che la schermata dei risultati arrivava subito.
+  Erano <b>due difetti sovrapposti</b>. La pausa di un secondo e mezzo esisteva
+  già, ma la caricava solo la porta della campagna, e la sopravvivenza da lì non
+  passa: la trovava a zero. E anche con la pausa, <b>lo scoppio restava fermo</b>
+  sul primo fotogramma, perché il mondo si ferma nel tick in cui muori e il lampo
+  si fermava con lui.</p>
+  <p class="cosa">Adesso lo scoppio finisce, e tutto il resto resta immobile
+  apposta: è il fermo immagine sul colpo che ti ha preso.</p>
+  <div class="chiedo"><b>Muori due volte: una in campagna e una in sopravvivenza.</b>
+  L’attesa prima dei risultati è giusta, troppo lunga o troppo corta? E il mondo
+  congelato mentre il tuo carro brucia funziona, o sembra che il gioco si sia
+  piantato?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Durata della pausa, e se il fermo immagine funziona. Campagna e sopravvivenza."></textarea>
+</div>
+
+<div class="punto" data-nome="2 · le briciole di pane">
+  <div class="testa"><span class="numero">2</span>
+    <span class="titolo">Sotto il sottotitolo, la strada fatta</span>
+    <span class="tag nuovo">tua richiesta di stamattina</span></div>
+  <p class="cosa">Piccole e smorte, sotto il nome della pagina:
+  <code>Gioca › Sopravvivenza › Classifica</code>. <b>La pagina in cui sei non
+  compare</b>, perché la dice già il sottotitolo sopra, in grande: ripeterla
+  scriverebbe due volte la stessa parola. Alla radice non compaiono affatto.</p>
+  <div class="chiedo"><b>Scendi fino alla classifica e alla bacheca, poi
+  in Opzioni › Accessibilità.</b> Si capisce quanto sei annidato? Sono troppo
+  piccole per leggerle, o giuste così? Ti aspettavi di vedere anche la pagina in
+  cui sei?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Misura, leggibilità, e se manca la pagina corrente."></textarea>
+</div>
+
+<div class="punto" data-nome="3 · il fumo">
+  <div class="testa"><span class="numero">3</span>
+    <span class="titolo">Adesso il fumo si vede</span>
+    <span class="tag torna">tuo riscontro di stamattina</span></div>
+  <p class="cosa">Due cause. Provando a far scorrere tutta la serie
+  <code>explosionSmoke1..5</code> è uscito <b>un secondo lampo giallo</b>: in quei
+  file, nonostante il nome, i primi quattro hanno ancora fuoco dentro, croce
+  gialla compresa. Solo il quinto è fumo, quindi il fotogramma era già quello
+  giusto. Il difetto vero era la curva della dissolvenza, scritta al contrario:
+  a metà vita lo sbuffo era già sceso a un quarto.</p>
+  <div class="chiedo"><b>Fai saltare due o tre carri.</b> Il fumo adesso si vede?
+  Dura troppo o troppo poco? E soprattutto: <b>nasconde qualcosa che ti serviva
+  vedere</b> — un nemico, un colpo in arrivo?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Se si vede, quanto dura, e se copre cose che servono."></textarea>
+</div>
+
+<div class="punto" data-nome="4 · le ombre, più lunghe e più scure">
+  <div class="testa"><span class="numero">4</span>
+    <span class="titolo">Quasi il doppio, e più inclinate</span>
+    <span class="tag torna">tuo riscontro di stamattina</span></div>
+  <p class="cosa">Erano un decimo dell’oggetto e al 26 per cento di nero: adesso
+  sono <b>un quinto</b>, al <b>38 per cento</b>, e cadono più di sbieco. È il
+  cambiamento più facile da aver esagerato.</p>
+  <div class="chiedo"><b>Guarda il menu, poi una partita, e stai sui carri in
+  movimento.</b> Adesso si notano — ma sembra che i carri <b>galleggino</b>? Se
+  sì me lo dici e basta: è un numero solo da muovere, e posso dartene tre
+  versioni.</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Si notano? I carri galleggiano? Più corte, più chiare, o così."></textarea>
+</div>
+
+<div class="punto" data-nome="5 · la «s» del wordmark">
+  <div class="testa"><span class="numero">5</span>
+    <span class="titolo">Ho rifatto una lettera del tuo logo</span>
+    <span class="tag nuovo">non ancora vagliato</span></div>
+  <p class="cosa">Il vettoriale del mockup disegna la «s» come una linea spessa
+  <b>58</b> dentro una lettera alta <b>97</b>. Una «s» ha tre barre e due
+  occhielli: a quel peso servirebbe il doppio dell’altezza, e viene una macchia —
+  lo stesso risultato lo darebbe un browser, non è un problema del motore. L’ho
+  rifatta <b>più alta</b> (quanto la «a») e <b>più leggera</b>, 36 invece di 58.
+  È l’unica lettera con un peso suo.</p>
+  <div class="chiedo"><b>Guarda il titolo da vicino e poi da lontano, nel menu e
+  all’avvio.</b> La «s» stona? Preferisci che riprovi in un altro modo?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Se la «s» sta bene col resto, o come la vorresti."></textarea>
+</div>
+
+<div class="punto" data-nome="6 · i detriti">
+  <div class="testa"><span class="numero">6</span>
+    <span class="titolo">Sette pezzi per scoppio, e restano</span>
+    <span class="tag torna">tua richiesta del 18</span></div>
+  <p class="cosa">Entro una casella e mezza — le nove caselle intorno — e restano
+  per tutta la missione. C’è un tetto di centoquaranta pezzi, altrimenti una
+  sopravvivenza lunga coprirebbe il campo; quando si sfora si buttano i più
+  vecchi. Mi hai già detto che <b>si vedono</b>: qui la domanda è se sono la
+  quantità e la misura giuste.</p>
+  <div class="chiedo"><b>Porta una sopravvivenza oltre l’ottava ondata.</b> Dopo
+  tante ondate il campo è ancora leggibile, o è diventato sporco? I pezzi sono
+  troppo pochi, troppi, troppo piccoli?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Quantità e misura dei pezzi, e com’è il campo dopo molte ondate."></textarea>
+</div>
+
+<div class="punto" data-nome="7 · il lucchetto della sopravvivenza">
+  <div class="testa"><span class="numero">7</span>
+    <span class="titolo">La scena non sfora, e i colpi rimbalzano</span>
+    <span class="tag torna">tuo riscontro del 18</span></div>
+  <p class="cosa">Le tue tre parole, tutte e tre. <b>I colpi non compaiono più
+  fuori dal riquadro:</b> quel che esce è coperto, e il riquadro è diventato una
+  finestra sul campo. <b>L’esplosione non è più un cerchio grigio.</b> <b>I colpi
+  rimbalzano una volta</b> su un muro prima di arrivare, e arrivano tutti e otto
+  insieme.</p>
+  <div class="chiedo"><b>Per vederla serve un salvataggio senza il mondo 1
+  finito:</b> «Ricomincia campagna», poi esci al menu e apri «Modalità
+  sopravvivenza». Guardala girare tre volte. Si capisce «lì dentro ti
+  travolgono»? Il rimbalzo si vede, o è troppo veloce?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Cosa comunica l’animazione, e se il rimbalzo si legge."></textarea>
+</div>
+
+<div class="punto" data-nome="8 · le vetrine del briefing">
+  <div class="testa"><span class="numero">8</span>
+    <span class="titolo">Niente esce dal riquadro, e i colpi sono quelli veri</span>
+    <span class="tag torna">tuo riscontro del 18</span></div>
+  <p class="cosa">Due sforavano davvero: il carro della vetrina dei <b>terreni</b>
+  partiva mezza casella fuori e usciva dall’altra parte — adesso va avanti e
+  indietro — e il colpo della <b>Pattuglia</b> sfondava il bordo destro. I colpi
+  non sono più pallini gialli: sono i proiettili del gioco, col colore dei
+  rimbalzi di chi spara.</p>
+  <div class="chiedo"><b>Le vetrine compaiono ai briefing con una novità</b> — i
+  primi livelli di ogni mondo sono i più rapidi da raggiungere dalla griglia.
+  Guardane due o tre: qualcosa esce ancora? Il carro che va avanti e indietro sui
+  terreni ti convince, o preferivi che attraversasse?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Se qualcosa sfora, e se il va e vieni sui terreni convince."></textarea>
+</div>
+
+<div class="punto" data-nome="9 · il titolo su tutte le pagine, e i crediti">
+  <div class="testa"><span class="numero">9</span>
+    <span class="titolo">«TinTitans» resta dappertutto, e i crediti vanno a sinistra</span>
+    <span class="tag nuovo">una parte è una decisione mia</span></div>
+  <p class="cosa">Su nove pagine il titolo spariva; adesso resta sopra, disegnato,
+  col nome della pagina sotto a sinistra. <b>Sui crediti ho fatto un passo in
+  più:</b> avevi scritto che il nome della pagina va «insieme al resto della
+  pagina allineato a sinistra», e le righe dei crediti erano in mezzo — due assi
+  sulla stessa colonna. Le ho portate a sinistra. Se le preferivi in mezzo è una
+  riga da cambiare.</p>
+  <div class="chiedo"><b>Fai un giro per tutte le pagine del menu.</b> Il titolo
+  ruba troppo spazio in cima? C’è una pagina in cui il risultato ti sembra
+  storto? E i crediti: meglio a sinistra o meglio in mezzo?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Il titolo pagina per pagina, e l’allineamento dei crediti."></textarea>
+</div>
+
+<div class="punto" data-nome="10 · che non si sia rotto niente">
+  <div class="testa"><span class="numero">10</span>
+    <span class="titolo">Le cose di ieri funzionano ancora</span>
+    <span class="tag">regressione</span></div>
+  <p class="cosa">Ho toccato il disegno di quasi tutte le schermate e la fine
+  della partita. Le prove dicono che la logica è a posto — 839 su 839 — ma le
+  prove non toccano lo schermo.</p>
+  <div class="chiedo"><b>Tre cose sole.</b> Gioca una missione della campagna e
+  controlla che il livello dopo si sblocchi. Sospendi una sopravvivenza col tasto
+  «menu» e riprendila, verificando di tornare <b>esattamente</b> dov’eri. Apri la
+  griglia dei livelli e scorrila fino in fondo.</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Progressione, sospendi/riprendi, griglia che scorre."></textarea>
+</div>
+
+<div class="punto" data-nome="11 · gli fps (non compilare)">
+  <div class="testa"><span class="numero">11</span>
+    <span class="titolo">Gioca e basta: i numeri li leggo io</span>
+    <span class="tag">niente da scrivere</span></div>
+  <p class="cosa">Il gioco annota da solo le immagini al secondo dentro i diari
+  delle partite, sul telefono. Dalla tua sessione delle 07:22 risultano
+  <b>119–120 fissi</b>, con cali solo nei primi due campioni di ogni livello —
+  cioè mentre carica. Il costo più alto non sono le ombre né i detriti: è
+  l’<b>anteprima di mira</b>, e lo era già prima.</p>
+  <div class="chiedo"><b>Non devi scrivere niente qui.</b> Basta che giochi
+  cinque minuti con questa build — meglio se una sopravvivenza lunga — e poi mi
+  dici «pesca i log». Ci penso io a tirarli giù e a confrontarli.</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Solo se hai notato scatti a occhio: quando."></textarea>
+</div>
+<div class="barra">
+  <button type="button" id="copia">Copia tutto</button>
+  <span id="esito"></span>
+</div>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var GIUDIZI = ["va bene", "così così", "non va", "non provato"];
+  var punti = Array.prototype.slice.call(document.querySelectorAll(".punto"));
+
+  punti.forEach(function (punto, indice) {
+    var dove = punto.querySelector(".giudizio");
+    if (!dove) { return; }
+    GIUDIZI.forEach(function (g) {
+      var lab = document.createElement("label");
+      var inp = document.createElement("input");
+      inp.type = "radio";
+      inp.name = "giudizio-" + indice;
+      inp.value = g;
+      lab.appendChild(inp);
+      lab.appendChild(document.createTextNode(g));
+      dove.appendChild(lab);
+    });
+  });
+
+  function testo() {
+    var righe = ["COLLAUDO UNDICESIMO GIRO — 19 set · morte, briciole, fumo, ombre, e il resto del decimo", ""];
+    var risposte = 0;
+    var saltati = [];
+
+    punti.forEach(function (punto, indice) {
+      var nome = punto.getAttribute("data-nome");
+      var scelto = punto.querySelector('input[name="giudizio-' + indice + '"]:checked');
+      var area = punto.querySelector("textarea");
+      var commento = area && area.value ? area.value.trim() : "";
+      var giudizio = scelto ? scelto.value : "";
+
+      if (!giudizio && !commento) {
+        saltati.push(nome);
+        return;
+      }
+      risposte += 1;
+      righe.push(nome + (giudizio ? "  [" + giudizio + "]" : ""));
+      if (commento) { righe.push("  " + commento.replace(/\n/g, "\n  ")); }
+      righe.push("");
+    });
+
+    righe.push("--------");
+    righe.push("risposti: " + risposte + " su " + punti.length);
+    righe.push(saltati.length ? "saltati: " + saltati.join(" | ") : "saltati: nessuno");
+    return righe.join("\n");
+  }
+
+  var esito = document.getElementById("esito");
+  document.getElementById("copia").addEventListener("click", function () {
+    var contenuto = testo();
+    function bene() { esito.textContent = "Copiato. Incollalo pure nella chat."; }
+    function male() {
+      esito.textContent = "Non riesco a copiare: seleziona il testo qui sotto.";
+      var area = document.createElement("textarea");
+      area.value = contenuto;
+      area.style.width = "100%";
+      area.style.height = "260px";
+      area.style.marginTop = "10px";
+      document.querySelector(".foglio").appendChild(area);
+      area.select();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(contenuto).then(bene, male);
+    } else {
+      male();
+    }
+  });
+})();
+</script>
+</body>
+</html>
