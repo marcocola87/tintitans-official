@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+<title>TinTitans — collaudo del dodicesimo giro</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0 16px 90px;
+    font: 16px/1.55 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1c1e21; background: #f4f5f7;
+  }
+  .foglio { max-width: 880px; margin: 0 auto; }
+  h1 { font-size: 26px; margin: 28px 0 4px; }
+  .sotto { color: #5b6169; margin: 0 0 20px; }
+  .nota {
+    background: #fff; border: 1px solid #d6dae0; border-left: 4px solid #4a7ab5;
+    border-radius: 6px; padding: 12px 16px; margin: 0 0 20px;
+  }
+  .nota p { margin: 6px 0; }
+  .nota p:first-child { margin-top: 0; }
+  .nota p:last-child { margin-bottom: 0; }
+  .punto {
+    background: #fff; border: 1px solid #d6dae0; border-radius: 8px;
+    padding: 14px 16px 16px; margin: 0 0 14px;
+  }
+  .testa { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .numero {
+    font: 700 15px/1 inherit; color: #fff; background: #4a7ab5;
+    border-radius: 999px; min-width: 26px; height: 26px;
+    display: inline-flex; align-items: center; justify-content: center;
+    flex: 0 0 auto;
+  }
+  .titolo { font-weight: 700; font-size: 17px; }
+  .tag {
+    font-size: 12px; text-transform: uppercase; letter-spacing: .04em;
+    background: #eceff3; border: 1px solid #d6dae0; border-radius: 4px;
+    padding: 2px 7px; color: #5b6169;
+  }
+  .tag.nuovo { background: #e7f0e9; border-color: #b6d3bf; color: #2b6b3f; }
+  .tag.torna { background: #fdf1e3; border-color: #e8cfa9; color: #96660f; }
+  .cosa { margin: 9px 0 0; }
+  .chiedo { margin: 9px 0 0; padding: 9px 12px; background: #f7f9fb;
+            border-left: 3px solid #c3c9d1; border-radius: 0 5px 5px 0; }
+  .chiedo b { color: #1c1e21; }
+  .giudizio { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .giudizio label {
+    border: 1px solid #c3c9d1; border-radius: 999px; padding: 7px 14px;
+    cursor: pointer; background: #fcfcfd; font-size: 15px;
+  }
+  .giudizio input { margin-right: 7px; }
+  textarea {
+    width: 100%; margin-top: 10px; min-height: 74px; padding: 9px 11px;
+    font: inherit; font-size: 15px; border: 1px solid #c3c9d1;
+    border-radius: 5px; background: #fcfcfd; resize: vertical;
+  }
+  textarea:focus, .giudizio label:focus-within {
+    outline: 2px solid #4a7ab5; outline-offset: -1px;
+  }
+  .barra {
+    position: sticky; bottom: 0; margin: 26px -16px 0; padding: 12px 16px;
+    background: #fffffff2; border-top: 1px solid #d6dae0;
+    display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+    backdrop-filter: blur(4px);
+  }
+  button {
+    font: 600 15px/1 inherit; padding: 12px 20px; border-radius: 6px;
+    border: 1px solid #33619b; background: #4a7ab5; color: #fff; cursor: pointer;
+  }
+  button:hover { background: #3d6aa1; }
+  #esito { color: #2b6b3f; font-weight: 600; }
+  code { font: 14px/1.4 ui-monospace, Consolas, monospace;
+         background: #eceff3; border-radius: 3px; padding: 1px 5px; }
+</style>
+</head>
+<body>
+<div class="foglio">
+
+<h1>Collaudo del dodicesimo giro</h1>
+<p class="sotto">Build di sviluppo <code>c4b1c4f</code>, installata alle 14:49.</p>
+
+<div class="nota">
+  <p><b>Ho chiuso otto dei tuoi punti e ne ho lasciati aperti due, dicendoti
+  perché.</b> I primi cinque qui sotto sono difetti che hai segnalato e che
+  adesso dovrebbero essere spariti; dal sesto in poi sono cose nuove da
+  giudicare.</p>
+  <p><b>Il punto 9 non è una domanda: è una risposta.</b> Ho letto i diari del
+  telefono e ho trovato perché la sopravvivenza rallenta. Leggilo e dimmi se
+  vuoi che lo sistemi.</p>
+  <p><b>Il punto 10 è una decisione tua</b>, e riguarda la classifica.</p>
+  <p>Rispondi solo a quel che provi. Quel che salti non conta come «va bene».</p>
+</div>
+
+<div class="punto" data-nome="1 · la griglia che scorre">
+  <div class="testa"><span class="numero">1</span>
+    <span class="titolo">Adesso arrivi al mondo 5 e ai test</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa">Il codice per scorrere c'era da due giorni e <b>non è mai stato
+  raggiunto da un dito</b>: un trascinamento non è un tocco, quindi veniva buttato
+  via dalla riga che scarta i non-tocchi, e anche fosse passato il ramo del menu
+  consuma qualunque evento venti righe più sotto. Adesso il trascinamento si
+  guarda per primo.</p>
+  <div class="chiedo"><b>Apri «Scegli livello» e scorri fino in fondo.</b> Arrivi
+  al mondo 5 e ai livelli di prova? Lo scorrimento è troppo veloce, troppo lento,
+  o giusto? Si ferma bene ai due capi?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Se arrivi in fondo, e come va la velocità dello scorrimento."></textarea>
+</div>
+
+<div class="punto" data-nome="2 · i detriti fra una run e l'altra">
+  <div class="testa"><span class="numero">2</span>
+    <span class="titolo">Il campo si azzera a ogni partita</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa">Non era un posto dimenticato: <b>i posti erano cinque</b>.
+  Tutorial, sopravvivenza, replay, missione di campagna e corsa nuova azzeravano i
+  solchi ognuno per conto suo, e i pezzi per terra solo nell'ultimo. Adesso la
+  porta è una sola, e una prova la bussa da tutte e tre quelle che si possono
+  aprire da codice.</p>
+  <div class="chiedo"><b>Fai saltare qualche carro, esci, e riapri una partita —
+  anche passando da campagna a sopravvivenza e viceversa.</b> Il campo è pulito?
+  E dentro la stessa run, fra un'ondata e l'altra, i pezzi restano?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Campo pulito fra le run, e pezzi che restano fra le ondate."></textarea>
+</div>
+
+<div class="punto" data-nome="3 · Riprendi">
+  <div class="testa"><span class="numero">3</span>
+    <span class="titolo">«Riprendi» guarda la sua modalità</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa">Due posti facevano la stessa domanda sbagliata — <i>«ho una
+  corsa viva in mano?»</i> — e la trattavano come <i>«ho una campagna»</i>. I
+  difetti erano speculari: uno <b>accendeva quel che non c'era</b> (sospendi una
+  sopravvivenza, apri la campagna, «Riprendi» acceso su niente), l'altro
+  <b>spegneva quel che c'era</b>. E ce n'era un terzo sul tutorial: uscendo, la
+  palestra restava «da riprendere».</p>
+  <div class="chiedo"><b>Prova tutte e tre le combinazioni.</b> Sospendi una
+  sopravvivenza e guarda la campagna. Sospendi una campagna e guarda la
+  sopravvivenza. Entra nel tutorial ed esci. In ognuna: il pulsante giusto è
+  acceso e quello sbagliato spento?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Le tre combinazioni: quale pulsante è acceso e cosa fa."></textarea>
+</div>
+
+<div class="punto" data-nome="4 · i cingoli dopo il ripristino">
+  <div class="testa"><span class="numero">4</span>
+    <span class="titolo">Le tracce tornano con la partita</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa">Non era un difetto del ripristino: <b>i segni non si salvavano
+  affatto</b>. La fotografia rimetteva in piedi carri, colpi e mine, ma le tracce
+  per terra vivevano solo in memoria — e fra la sospensione e la ripresa ci può
+  essere stata un'altra missione, che il campo l'ha pulito.</p>
+  <p class="cosa">Si salva <b>l'età</b> di ogni traccia e non l'istante: l'orologio
+  del telefono riparte da zero a ogni avvio, e una corsa ripresa dopo un riavvio si
+  sarebbe ritrovata segni nati nel futuro, cioè le tracce vecchie più scure delle
+  fresche.</p>
+  <div class="chiedo"><b>Ripeti esattamente la prova di stamattina:</b> sopravvivenza
+  a metà, menu, una missione di campagna, menu, riprendi la sopravvivenza. Le
+  tracce ci sono? E riprova anche <b>chiudendo del tutto l'app</b> in mezzo.</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Se i cingoli tornano, anche dopo aver chiuso l'app."></textarea>
+</div>
+
+<div class="punto" data-nome="5 · morire senza fermo immagine">
+  <div class="testa"><span class="numero">5</span>
+    <span class="titolo">I colpi in volo finiscono la loro corsa</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa">Avevi ragione: il fermo immagine raccontava «il gioco si è
+  piantato» più che «sei morto». Adesso <b>la corsa resta ferma e la simulazione
+  no</b>: il timer si ferma nell'istante dello scoppio, come hai chiesto, e i
+  colpi per aria atterrano, i nemici camminano.</p>
+  <div class="chiedo"><b>Muori due volte, una per modalità.</b> Adesso convince?
+  Il secondo e mezzo prima dei risultati è giusto, corto o lungo?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Come si legge adesso la propria morte."></textarea>
+</div>
+
+<div class="punto" data-nome="6 · l'intestazione: titolo fisso, casetta, briciole">
+  <div class="testa"><span class="numero">6</span>
+    <span class="titolo">Il titolo non salta più</span>
+    <span class="tag torna">tua richiesta</span></div>
+  <p class="cosa">Si spostava perché <b>ogni pagina se lo calcolava da sola</b>:
+  tredici file, tredici numeri diversi, dallo 0,05 delle statistiche allo 0,16 del
+  nickname. Adesso le misure stanno in un posto solo. Sotto, nell'ordine che hai
+  chiesto: <b>casetta + briciole</b>, poi il <b>nome della pagina</b>, poi il
+  contenuto. La riga della casetta c'è sempre, anche in home.</p>
+  <div class="chiedo"><b>Passa da una pagina all'altra guardando il titolo.</b>
+  Sta fermo? La casetta si vede abbastanza, o è troppo piccola? Le briciole sopra
+  il nome della pagina ti tornano, o le rivolevi sotto?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Titolo fermo, casetta, ordine di briciole e sottotitolo."></textarea>
+</div>
+
+<div class="punto" data-nome="7 · la linea di mira">
+  <div class="testa"><span class="numero">7</span>
+    <span class="titolo">Si ferma con la X sui nemici e sulle mine</span>
+    <span class="tag torna">tua richiesta</span></div>
+  <p class="cosa">Stessa croce del muro fragile. La domanda la fa <b>la stessa
+  equazione</b> con cui la simulazione decide se un colpo ha preso un carro — non
+  una stima somigliante, o la linea direbbe «lo prendevo» e il colpo no. Le mine
+  <b>appena posate</b> non fermano niente: non sono ancora armate.</p>
+  <p class="cosa">E in <b>sopravvivenza</b> la linea adesso è quella del primo
+  livello di campagna, come hai chiesto: era intera. Il ragionamento vecchio
+  l'ho lasciato scritto accanto al nuovo.</p>
+  <div class="chiedo"><b>Punta un nemico, poi una mina, poi un muro fragile.</b>
+  La X compare dove deve? E la linea più corta in sopravvivenza: si gioca meglio o
+  peggio? È la cosa su cui potresti voler tornare indietro.</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="La X sui bersagli, e come si gioca con la linea più corta."></textarea>
+</div>
+
+<div class="punto" data-nome="8 · detriti che saltano, e la scintilla">
+  <div class="testa"><span class="numero">8</span>
+    <span class="titolo">I pezzi escono dallo scoppio, i colpi fanno una scintilla</span>
+    <span class="tag torna">tua richiesta</span></div>
+  <p class="cosa">I detriti partono dal centro, girano su se stessi e si posano in
+  un terzo di secondo. <b>Il rimbalzo è un ingrandimento</b>, e non poteva essere
+  altro: visto dall'alto un salto non si vede, si vede che la cosa si avvicina
+  all'occhio. E ogni colpo che finisce la sua corsa fa un lampo di un ottavo di
+  secondo — non dove c'è già uno scoppio vero, o sarebbero due lampi sovrapposti.</p>
+  <div class="chiedo"><b>Spara contro un muro, e fai saltare qualche carro.</b> Il
+  saltello dei pezzi si legge o è troppo? La scintilla è troppo piccola, troppo
+  breve, o giusta?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Il saltello dei detriti e la scintilla dei colpi."></textarea>
+</div>
+
+<div class="punto" data-nome="9 · perché la sopravvivenza rallenta (risposta, non domanda)">
+  <div class="testa"><span class="numero">9</span>
+    <span class="titolo">Ho trovato perché scende a 40 fps</span>
+    <span class="tag nuovo">serve una tua decisione</span></div>
+  <p class="cosa">Nei diari di stamattina una tua run è scesa a <b>40 fps</b>, con
+  un costo di simulazione da <b>15 millesimi</b> per fotogramma: a 120 fps il
+  budget è 8,3. Il profilatore non sapeva leggere le sopravvivenze — l'unica
+  modalità in cui il problema si vede — quindi gliel'ho insegnato.</p>
+  <p class="cosa"><b>L'elenco dei nemici non si svuota mai.</b> A fine corsa ce
+  n'erano <b>38 nell'elenco e 5 vivi</b>. Da lì due costi che si sommano:
+  l'<b>impronta</b> è il 31,7% del tick e ricostruisce ogni volta un array che
+  passa da 305 a 1315 numeri — sessanta volte al secondo; e le fasi dei nemici
+  percorrono la lista lunga per trovarci dentro cinque vivi.</p>
+  <p class="cosa"><b>Non l'ho corretto perché togliere i morti cambia l'impronta</b>,
+  cioè il checksum di ogni corsa già in classifica. La via che non costa niente
+  c'è: ripiegare l'impronta <b>incrementalmente</b> invece di ricostruirla, stesso
+  identico numero, senza allocare.</p>
+  <div class="chiedo"><b>Vuoi che lo sistemi?</b> Vale una sessione intera e
+  toglie circa un terzo del costo del tick. Se sì, lo faccio per primo.</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Sì / no / prima altro."></textarea>
+</div>
+
+<div class="punto" data-nome="10 · registrare oltre la morte (decisione)">
+  <div class="testa"><span class="numero">10</span>
+    <span class="titolo">La mezza richiesta che non ho fatto</span>
+    <span class="tag nuovo">serve una tua decisione</span></div>
+  <p class="cosa">Mi avevi scritto: <i>«il timer si deve fermare all'istante
+  dell'esplosione, <b>ma continui a registrare oltre per il replay</b>»</i>. Il
+  timer si ferma e il mondo gira — quello è fatto. Registrare oltre no.</p>
+  <p class="cosa">Registrare oltre vuol dire far ticchettare la <b>corsa</b> dopo
+  la morte, e questo allunga il replay e cambia il checksum di <b>tutte</b> le
+  corse già fatte: l'arbitro fa sparire dalla classifica quelle che non tornano, e
+  in questo momento dodici tester stanno accumulando primati. Il modo di farlo
+  senza perdere niente esiste — lo stesso di oggi per il margine del colpo: far
+  viaggiare la regola dentro il replay.</p>
+  <div class="chiedo"><b>Lo faccio adesso o dopo il test chiuso?</b> E ti serve
+  davvero il replay che continua dopo la morte, o ti bastava vedere il mondo
+  girare — che adesso lo fa?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Adesso / dopo il test chiuso / non serve."></textarea>
+</div>
+
+<div class="punto" data-nome="11 · la vetrina dell'anteprima di mira">
+  <div class="testa"><span class="numero">11</span>
+    <span class="titolo">Questa non l'ho ancora fatta</span>
+    <span class="tag">rimandata</span></div>
+  <p class="cosa">Mi avevi chiesto: <i>«anche quando cambia l'anteprima di mira,
+  mettiamo una vetrina con una rappresentazione grafica del rimbalzo
+  (minimizzato, giusto per far capire il concetto)»</i>. Il briefing già annuncia
+  il cambio — la voce esiste — ma <b>senza vetrina animata</b>. Ho preferito
+  chiudere i cinque difetti prima di aggiungere una cosa nuova.</p>
+  <div class="chiedo"><b>Niente da provare qui.</b> Se la vuoi nel prossimo giro,
+  dimmi solo se l'idea è quella che immagino: il carro spara di sponda contro un
+  muro e colpisce un nemico che sta dietro l'angolo, con la linea di mira
+  disegnata sopra.</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Se la scena che immagino è quella giusta."></textarea>
+</div>
+
+<div class="punto" data-nome="12 · che non si sia rotto niente">
+  <div class="testa"><span class="numero">12</span>
+    <span class="titolo">Regressioni</span>
+    <span class="tag">regressione</span></div>
+  <p class="cosa">Ho toccato l'intestazione di tutte le pagine, la fine della
+  partita, il formato delle fotografie e la taratura. 863 prove sono verdi, ma le
+  prove non toccano lo schermo.</p>
+  <p class="cosa">Una cosa in particolare: <b>il margine di sicurezza del colpo è
+  sceso a un terzo di casella</b>, come avevi chiesto. Adesso è una manopola del
+  pannello di taratura, così il numero si trova col pollice — e i replay vecchi si
+  rigiocano col margine di prima, quindi non si è perso nessun primato.</p>
+  <div class="chiedo"><b>Spara contro un muro da vicinissimo</b>, anche avanzando
+  nella stessa direzione: il colpo di ritorno ti prende adesso? È il
+  comportamento che volevi, o è diventato troppo severo? E poi un giro normale:
+  campagna, sopravvivenza, pagine del menu.</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Il margine del colpo a bruciapelo, e se qualcosa si è rotto."></textarea>
+</div>
+<div class="barra">
+  <button type="button" id="copia">Copia tutto</button>
+  <span id="esito"></span>
+</div>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var GIUDIZI = ["va bene", "così così", "non va", "non provato"];
+  var punti = Array.prototype.slice.call(document.querySelectorAll(".punto"));
+
+  punti.forEach(function (punto, indice) {
+    var dove = punto.querySelector(".giudizio");
+    if (!dove) { return; }
+    GIUDIZI.forEach(function (g) {
+      var lab = document.createElement("label");
+      var inp = document.createElement("input");
+      inp.type = "radio";
+      inp.name = "giudizio-" + indice;
+      inp.value = g;
+      lab.appendChild(inp);
+      lab.appendChild(document.createTextNode(g));
+      dove.appendChild(lab);
+    });
+  });
+
+  function testo() {
+    var righe = ["COLLAUDO DODICESIMO GIRO — 19 set · griglia, riprendi, cingoli, intestazione, mira", ""];
+    var risposte = 0;
+    var saltati = [];
+
+    punti.forEach(function (punto, indice) {
+      var nome = punto.getAttribute("data-nome");
+      var scelto = punto.querySelector('input[name="giudizio-' + indice + '"]:checked');
+      var area = punto.querySelector("textarea");
+      var commento = area && area.value ? area.value.trim() : "";
+      var giudizio = scelto ? scelto.value : "";
+
+      if (!giudizio && !commento) {
+        saltati.push(nome);
+        return;
+      }
+      risposte += 1;
+      righe.push(nome + (giudizio ? "  [" + giudizio + "]" : ""));
+      if (commento) { righe.push("  " + commento.replace(/\n/g, "\n  ")); }
+      righe.push("");
+    });
+
+    righe.push("--------");
+    righe.push("risposti: " + risposte + " su " + punti.length);
+    righe.push(saltati.length ? "saltati: " + saltati.join(" | ") : "saltati: nessuno");
+    return righe.join("\n");
+  }
+
+  var esito = document.getElementById("esito");
+  document.getElementById("copia").addEventListener("click", function () {
+    var contenuto = testo();
+    function bene() { esito.textContent = "Copiato. Incollalo pure nella chat."; }
+    function male() {
+      esito.textContent = "Non riesco a copiare: seleziona il testo qui sotto.";
+      var area = document.createElement("textarea");
+      area.value = contenuto;
+      area.style.width = "100%";
+      area.style.height = "260px";
+      area.style.marginTop = "10px";
+      document.querySelector(".foglio").appendChild(area);
+      area.select();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(contenuto).then(bene, male);
+    } else {
+      male();
+    }
+  });
+})();
+</script>
+</body>
+</html>
