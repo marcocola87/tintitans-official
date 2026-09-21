@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+<title>TinTitans — collaudo del quattordicesimo giro</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0 16px 90px;
+    font: 16px/1.55 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1c1e21; background: #f4f5f7;
+  }
+  .foglio { max-width: 880px; margin: 0 auto; }
+  h1 { font-size: 26px; margin: 28px 0 4px; }
+  .sotto { color: #5b6169; margin: 0 0 20px; }
+  .nota {
+    background: #fff; border: 1px solid #d6dae0; border-left: 4px solid #4a7ab5;
+    border-radius: 6px; padding: 12px 16px; margin: 0 0 20px;
+  }
+  .nota p { margin: 6px 0; }
+  .nota p:first-child { margin-top: 0; }
+  .nota p:last-child { margin-bottom: 0; }
+  .punto {
+    background: #fff; border: 1px solid #d6dae0; border-radius: 8px;
+    padding: 14px 16px 16px; margin: 0 0 14px;
+  }
+  .testa { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .numero {
+    font: 700 15px/1 inherit; color: #fff; background: #4a7ab5;
+    border-radius: 999px; min-width: 26px; height: 26px;
+    display: inline-flex; align-items: center; justify-content: center;
+    flex: 0 0 auto;
+  }
+  .titolo { font-weight: 700; font-size: 17px; }
+  .tag {
+    font-size: 12px; text-transform: uppercase; letter-spacing: .04em;
+    background: #eceff3; border: 1px solid #d6dae0; border-radius: 4px;
+    padding: 2px 7px; color: #5b6169;
+  }
+  .tag.nuovo { background: #e7f0e9; border-color: #b6d3bf; color: #2b6b3f; }
+  .tag.torna { background: #fdf1e3; border-color: #e8cfa9; color: #96660f; }
+  .cosa { margin: 9px 0 0; }
+  .chiedo { margin: 9px 0 0; padding: 9px 12px; background: #f7f9fb;
+            border-left: 3px solid #c3c9d1; border-radius: 0 5px 5px 0; }
+  .chiedo b { color: #1c1e21; }
+  .giudizio { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .giudizio label {
+    border: 1px solid #c3c9d1; border-radius: 999px; padding: 7px 14px;
+    cursor: pointer; background: #fcfcfd; font-size: 15px;
+  }
+  .giudizio input { margin-right: 7px; }
+  textarea {
+    width: 100%; margin-top: 10px; min-height: 74px; padding: 9px 11px;
+    font: inherit; font-size: 15px; border: 1px solid #c3c9d1;
+    border-radius: 5px; background: #fcfcfd; resize: vertical;
+  }
+  textarea:focus, .giudizio label:focus-within {
+    outline: 2px solid #4a7ab5; outline-offset: -1px;
+  }
+  .barra {
+    position: sticky; bottom: 0; margin: 26px -16px 0; padding: 12px 16px;
+    background: #fffffff2; border-top: 1px solid #d6dae0;
+    display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+    backdrop-filter: blur(4px);
+  }
+  button {
+    font: 600 15px/1 inherit; padding: 12px 20px; border-radius: 6px;
+    border: 1px solid #33619b; background: #4a7ab5; color: #fff; cursor: pointer;
+  }
+  button:hover { background: #3d6aa1; }
+  #esito { color: #2b6b3f; font-weight: 600; }
+  code { font: 14px/1.4 ui-monospace, Consolas, monospace;
+         background: #eceff3; border-radius: 3px; padding: 1px 5px; }
+</style>
+</head>
+<body>
+<div class="foglio">
+<h1>Collaudo del quattordicesimo giro</h1>
+<p class="sotto">Build di sviluppo <code>67e14e5</code>, installata alle 06:22. Sedici punti: dodici sono tuoi appunti chiusi, due sono
+decisioni tue, e uno è la <b>modalità nuova</b>.</p>
+
+<div class="nota">
+  <p><b>Due difetti falsavano le partite, e li avevi trovati tutti e due.</b>
+  La morte senza esplosione e il terreno della sopravvivenza che cambiava
+  uscendo e rientrando. Sono i punti 1 e 2, e vale la pena leggerne le cause:
+  in tutti e due i casi il difetto era più largo di quel che si vedeva.</p>
+  <p><b>La modalità «A scorrimento» c'è ed è giocabile</b> — punto 15. È nuova
+  di oggi, quindi non aspettarti equilibrio: quel che serve sapere è se il
+  <i>gesto</i> funziona.</p>
+  <p><b>I punti 14 e 16 sono decisioni tue</b>, con i costi in chiaro.</p>
+  <p>Rispondi solo a quel che provi. Quel che salti non conta come «va bene».</p>
+</div>
+
+<div class="punto" data-nome="1 · la morte senza esplosione">
+  <div class="testa"><span class="numero">1</span>
+    <span class="titolo">Il difetto non era la morte: era il gioco che rallenta</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa">Il diario di quella partita dice <b>27 fotogrammi al
+  secondo</b>. A ventisette, ogni fotogramma esegue <b>due o tre tick</b> — e la
+  simulazione azzera i suoi «echi» all'inizio di ognuno, mentre chi disegna li
+  leggeva <b>una volta per fotogramma</b>. Di tre esplosioni ne arrivava una.</p>
+  <p class="cosa">Il cumulo di rottami si è visto lo stesso perché quello è
+  <b>stato</b>, non eco: sta nella griglia, e la griglia non si azzera. È la
+  differenza che spiega tutta la scena che hai descritto.</p>
+  <p class="cosa">Valeva per <b>tutti e cinque</b> gli echi — spari, rimbalzi,
+  scontri, esplosioni, colpi spenti — quindi anche per i suoni. E si vedeva
+  <b>solo quando il gioco rallenta</b>, cioè esattamente quando serve capire
+  cos'è successo.</p>
+  <div class="chiedo"><b>Gioca finché non rallenta</b> (o gioca a lungo in
+  sopravvivenza) e fatti colpire. L'esplosione c'è sempre? E i suoni degli spari
+  e degli impatti ti sembrano tutti al loro posto anche quando il gioco arranca?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Se l'esplosione c'è sempre, anche quando il gioco rallenta."></textarea>
+</div>
+
+<div class="punto" data-nome="2 · il terreno della sopravvivenza">
+  <div class="testa"><span class="numero">2</span>
+    <span class="titolo">Terra, esci, rientri: era erba. E non era solo il colore</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa">Il terreno della sopravvivenza non si salva, <b>ed è giusto</b>:
+  è una funzione dell'ondata, sempre la stessa. Solo che nessuno la richiamava
+  alla ripresa, e restava quello dell'ondata 1 — l'erba.</p>
+  <p class="cosa"><b>Avevi visto il lato del giocatore che ne approfitta</b>
+  (<i>«può sfruttare questo bug»</i>); c'è anche l'altro, ed è peggio: la
+  velocità del carro si ricalcola dal fondo e i nemici se la copiano, quindi la
+  corsa vera girava coi numeri sbagliati — mentre <b>il replay aveva il terreno
+  giusto</b>. Le due corse divergevano, e il tuo primato sarebbe stato
+  <b>bocciato dall'arbitro</b> senza che nessuno capisse perché.</p>
+  <div class="chiedo"><b>Rifai esattamente la prova</b>: arriva all'ondata 2 o
+  più (terra, sabbia, neve), esci al menu, riprendi. Il terreno è quello giusto?
+  E il carro va alla velocità di quel fondo — sulla sabbia lento, sulla neve
+  scivoloso?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Il terreno dopo la ripresa, e se la velocità è quella del fondo."></textarea>
+</div>
+
+<div class="punto" data-nome="3 · i cingoli del replay">
+  <div class="testa"><span class="numero">3</span>
+    <span class="titolo">Uscendo da un replay, il campo di quell'altro se ne va con lui</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa">Al dodicesimo giro avevo impedito che la corsa di un altro
+  finisse <b>su disco</b>; restava che non se ne andava <b>dallo schermo</b>.
+  Entrando in un replay il campo si pulisce, perché è la porta di una partita —
+  ma <b>uscire è una porta quanto entrare</b>, e da quella non puliva nessuno.</p>
+  <div class="chiedo"><b>Guarda un replay, esci, e riprendi o comincia una
+  partita tua.</b> Trovi cingoli, pezzi o fumo che non sono tuoi?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Se il campo di un replay resta dopo essere usciti."></textarea>
+</div>
+
+<div class="punto" data-nome="4 · uscire dall'account">
+  <div class="testa"><span class="numero">4</span>
+    <span class="titolo">«Esci» avvisa, perché adesso porta via qualcosa</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa">Come hai chiesto, uscire <b>cancella le partite salvate su
+  questo telefono</b> — campagna, livelli sbloccati, corse a metà — e la conferma
+  lo dice prima. Questo chiude il buco che avevi trovato: <i>«mi sono sloggato,
+  poi ho cliccato su Riprendi ed è partita la partita di prima»</i>. La
+  sopravvivenza si apre solo ai collegati; una corsa sospesa che sopravvive
+  all'uscita è <b>la porta chiusa all'ingresso e aperta sul retro</b>.</p>
+  <p class="cosa"><b>Il server non si tocca:</b> nome, trofei e corse in
+  classifica restano, e rientrando con lo stesso account Google ritrovi tutto.</p>
+  <div class="chiedo"><b>Gioca un po', sospendi, poi esci dall'account.</b> La
+  conferma è chiara su cosa perdi? Dopo, «Riprendi» è spento e la campagna è da
+  capo? E rientrando ritrovi nickname, skin e classifica?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="La conferma, cosa sparisce, e cosa ritrovi rientrando."></textarea>
+</div>
+
+<div class="punto" data-nome="5 · la pagina dell'account">
+  <div class="testa"><span class="numero">5</span>
+    <span class="titolo">Dice come ti chiami, e ha un tasto in più</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa"><i>«Vedo la mia skin ma non il mio nick»</i>. La riga che lo
+  disegna c'era dal nono giro e non disegnava niente: il nome si legge all'avvio
+  da quel che il telefono ricorda, e chi si era collegato in una sessione
+  precedente senza averlo ricordato restava senza, <b>per sempre</b>. Adesso la
+  pagina lo chiede al server aprendosi, e la riga dice <b>«Collegato a Google
+  come X.»</b></p>
+  <p class="cosa">C'è <b>«Scegli il tuo nickname»</b> sopra <b>«Scegli la tua
+  skin»</b> — il nome viene prima del vestito — e <b>«faccia» non si legge più da
+  nessuna parte</b>: si dice skin, in italiano e in inglese.</p>
+  <p class="cosa">E il tasto rosso non c'è più. <i>(Google Play però pretende
+  <b>due</b> strade per cancellare un account, una in-app e una sul web: l'ho
+  messa dove hai detto tu, nei crediti accanto alla privacy. Vedi il punto 6.)</i></p>
+  <div class="chiedo"><b>Apri l'account da collegato.</b> Vedi il tuo nickname?
+  I tre tasti sono nell'ordine giusto? E il percorso in alto dice <b>«casetta ›
+  Il tuo account»</b> anche se ci arrivi da dentro «Gioca → Campagna»?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Nickname, i tre tasti, e il percorso in alto."></textarea>
+</div>
+
+<div class="punto" data-nome="6 · regole del nickname e privacy">
+  <div class="testa"><span class="numero">6</span>
+    <span class="titolo">Le regole stanno dove si scrive il nome</span>
+    <span class="tag nuovo">nuovo</span></div>
+  <p class="cosa">Nella pagina del nickname, <b>appena sopra i tasti</b>: è
+  l'ultima cosa che si legge prima di confermare, cioè il punto in cui una regola
+  serve ancora a qualcosa. Tre righe e non il regolamento intero — lì si scrive
+  un nome sopra una tastiera aperta, e un muro di testo non lo legge nessuno.</p>
+  <p class="cosa">L'accettazione è <b>il gesto di confermare</b>: «Confermando
+  accetti le regole e la privacy ›», e quella riga apre la pagina intera. Una
+  casella da spuntare in più non protegge nessuno.</p>
+  <p class="cosa">Nei <b>crediti</b>, in fondo: «Privacy e regole sul nickname» e
+  «Cancella il mio account». La privacy pubblicata adesso contiene le regole di
+  condotta, la skin fra i dati raccolti, e la differenza fra «Esci» e
+  «Cancella». La fonte di quel testo sta nel repository del gioco, così si
+  aggiorna insieme al codice invece di invecchiare da sola.</p>
+  <div class="chiedo"><b>Apri la pagina del nickname e i crediti.</b> Le regole
+  si leggono senza pesare? Il collegamento apre la pagina giusta? E il testo
+  della privacy ti sembra dire quel che volevi?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Le regole nella pagina del nome, e i due collegamenti nei crediti."></textarea>
+</div>
+
+<div class="punto" data-nome="7 · la skin in partita">
+  <div class="testa"><span class="numero">7</span>
+    <span class="titolo">La skin scelta scende in campo — e questo cambia le regole</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa">In partita adesso guidi <b>il carro che hai scelto</b>, non il
+  blu. E questa riga rende seria l'altra (<i>«togli gli archetipi dalle skin»</i>)
+  in un modo più severo di com'era scritta: finché la skin stava sul bollino, una
+  con lo scafo della Sentinella era poco originale e basta; da quando <b>scende
+  in campo</b>, è un carro che somiglia a un nemico <b>mentre lo stai
+  schivando</b>.</p>
+  <p class="cosa">Quindi non bastava togliere le cinque coppie esatte: va escluso
+  ogni <b>scafo</b> che un archetipo usa, canna diversa o no. Restavano due
+  scafi liberi su sette, cioè quattordici avatar in due colori — da qui
+  <b>quattro carri nuovi</b>: arancione (che la Pattuglia ha appena lasciato),
+  giallo, turchese, magenta.</p>
+  <div class="chiedo"><b>Scegli una skin e gioca.</b> Il tuo carro è quello
+  giusto? Si distingue bene dai nemici in campo? E le quattordici skin ti
+  sembrano abbastanza diverse fra loro?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Se la skin scende in campo e se si distingue dai nemici."></textarea>
+</div>
+
+<div class="punto" data-nome="8 · la Pattuglia verde">
+  <div class="testa"><span class="numero">8</span>
+    <span class="titolo">Avevi ragione, e la misura dice quanto</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa">Pattuglia e Rimbalzante stavano a <b>0,152</b> di distanza in
+  RGB nel classico e a <b>0,107</b> nel neon: la coppia più vicina di tutte, in
+  tre skin su quattro. Arancio bruciato e rosso a quindici gradi di tinta: due
+  vernici della stessa latta.</p>
+  <p class="cosa">Cambia la <b>Pattuglia</b> e non il Rimbalzante perché il rosso
+  è il colore del pericolo e il Rimbalzante è l'archetipo più insidioso — il suo
+  colpo ti arriva da dove non stavi guardando.</p>
+  <p class="cosa"><b>Verde e non giallo, e l'ha deciso una misura.</b> Il giallo
+  nel classico funzionava (0,257) ma nel neon precipitava a <b>0,067</b>: quella
+  skin satura tutto, quindi la differenza che separa sabbia e giallo lì svanisce.
+  Il verde è la tinta al centro dell'intervallo libero più largo. Risultato:
+  <b>classico 0,152 → 0,288, neon 0,107 → 0,140, retro → 0,357</b>.</p>
+  <p class="cosa"><i>Resta un debito nel <b>cyberpunk</b>, e te lo dico: lì la
+  Pattuglia verde va vicino all'asfalto, e l'Incursore era già vicino al carro
+  del giocatore. Sono difetti di quella skin, non del classico.</i></p>
+  <div class="chiedo"><b>Gioca un livello con Pattuglia e Rimbalzante insieme.</b>
+  Si distinguono a colpo d'occhio adesso? E prova anche le altre skin dalle
+  opzioni: ce n'è una in cui due nemici si confondono ancora?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Se i cinque nemici si distinguono, e in quali skin."></textarea>
+</div>
+
+<div class="punto" data-nome="9 · intestazione e bollino">
+  <div class="testa"><span class="numero">9</span>
+    <span class="titolo">Il separatore su ogni tappa, e il bollino grande il doppio</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa">La pagina corrente era un caso a parte — veniva dopo la strada,
+  col separatore attaccato in coda a quella — e se la strada era vuota, cioè a un
+  passo dalla radice, non c'era nessuna coda a cui attaccarlo. Adesso il
+  separatore sta <b>davanti</b> a ciascuna tappa: non c'è più un elemento da
+  trattare diversamente, quindi non c'è più un caso in cui sbagliare.</p>
+  <p class="cosa">Il bollino è <b>grande il doppio</b>; l'aria intorno no, o si
+  staccherebbe dall'angolo invece di starci.</p>
+  <div class="chiedo"><b>Gira per tutte le pagine.</b> Il formato è sempre lo
+  stesso? Il bollino adesso si prende bene col dito?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Il formato delle briciole e la misura del bollino."></textarea>
+</div>
+
+<div class="punto" data-nome="10 · la griglia dei livelli">
+  <div class="testa"><span class="numero">10</span>
+    <span class="titolo">Scorrere non fa più partire il livello sotto al dito</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa">È un'eccezione a una regola scritta, quindi la motivo: tutti i
+  menu del gioco rispondono al dito che <b>si appoggia</b>, e resta così. La
+  griglia è l'unico posto in cui lo stesso gesto ha <b>due significati</b> —
+  «apri questo» o «prendi la lista» — e quale sia non si sa finché il dito non si
+  muove. Decidere alla pressione vuol dire indovinare, e si indovinava sempre
+  «apri».</p>
+  <p class="cosa">Si somma <b>il cammino</b> e non lo spostamento: chi scorre giù
+  e risale ha mosso il dito di duecento pixel e lo stacca a due dal via.</p>
+  <p class="cosa">E la sfumatura è <b>una maschera</b>, non una macchia: sfumare
+  sul nero vuol dire stendere il colore del fondo sopra la lista, e dietro passa
+  il campo di battaglia — lì quella velatura era un rettangolo di inchiostro.</p>
+  <div class="chiedo"><b>Scorri partendo col dito sopra un livello.</b> Parte
+  ancora? E un tocco fermo lo apre come prima? La sfumatura ai bordi adesso
+  lascia vedere quel che c'è sotto?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="La zona morta e la sfumatura dei bordi."></textarea>
+</div>
+
+<div class="punto" data-nome="11 · le prestazioni e la mira corta">
+  <div class="testa"><span class="numero">11</span>
+    <span class="titolo">Mira CORTA in sopravvivenza, come hai deciso</span>
+    <span class="tag torna">tua decisione</span></div>
+  <p class="cosa">Applicata: SPONDA costava <b>1319 µs</b> contro i <b>646</b> di
+  CORTA, e non cresceva con le ondate — era alta dal primo secondo. Non era un
+  problema dell'ottava ondata, era il prezzo di SPONDA.</p>
+  <p class="cosa">Si somma ai due risparmi del giro prima: l'impronta che non
+  conta più i morti e la memoria della linea che guarda un numero invece di
+  duecentosettanta celle.</p>
+  <div class="chiedo"><b>Gioca una sopravvivenza fino all'ottava-nona ondata.</b>
+  I cali ci sono ancora? E la linea corta ti sembra troppo poco aiuto, o giusta
+  per una modalità che misura?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="I fotogrammi alle ondate alte, e se la linea corta basta."></textarea>
+</div>
+
+<div class="punto" data-nome="12 · riprova">
+  <div class="testa"><span class="numero">12</span>
+    <span class="titolo">«Riprova» rigioca la missione, non il mondo</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa"><i>«A questo punto per come abbiamo impostato il gioco»</i> è la
+  parte che spiega il cambiamento: quando «Riprova» è nato, la griglia dei
+  livelli non c'era, e ripartire dal mondo era l'unico modo per tornare indietro
+  di proposito. Adesso la griglia c'è ed è <b>lei</b> il posto giusto per
+  scegliere.</p>
+  <p class="cosa"><i>La prova che lo guardava passava anche col difetto: faceva
+  morire il carro sulla <b>prima</b> missione del mondo, dove i due
+  comportamenti danno lo stesso numero.</i></p>
+  <div class="chiedo"><b>Muori a metà di un mondo e tocca «Riprova».</b> Riparte
+  da quella missione?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Da dove riparte «Riprova»."></textarea>
+</div>
+
+<div class="punto" data-nome="13 · le animazioni coerenti">
+  <div class="testa"><span class="numero">13</span>
+    <span class="titolo">Tutte le animazioni usano gli effetti della partita</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa"><b>Lo sfondo del menu:</b> le esplosioni hanno detriti e fumo,
+  i proiettili sono lo sprite vero ruotato, e i tank <b>non attraversano più gli
+  alberi</b>. Lo sterzo c'era e non bastava — dava una spallata alla direzione, e
+  non regge il caso che lì capita di continuo: il paesaggio che scorre e porta
+  una cassa <b>addosso</b> a un carro. Adesso il passo si prova un asse per
+  volta: un carro che si blocca sembra rotto, uno che striscia accanto sembra un
+  carro che aggira.</p>
+  <p class="cosa"><b>L'animazione del lucchetto:</b> sei colpi da sei punti
+  diversi del perimetro, ognuno con la sua partenza, il volo quasi doppio, e
+  <b>due che mancano</b> passandogli di fianco. Niente più rimbalzi: i colpi
+  devono venire da nemici che non si vedono, e un nemico che non si vede non
+  rimbalza — spara. Più detriti e fumo sullo scoppio.</p>
+  <p class="cosa"><b>Le vetrine del briefing</b> adesso lasciano i cingoli, con
+  lo stesso modulo del gioco.</p>
+  <p class="cosa"><i>In tutti e tre i casi si riusa il modulo vero invece di
+  rifarlo: è esattamente il modo in cui quei difetti erano nati.</i></p>
+  <div class="chiedo"><b>Guarda il menu un minuto</b>, poi <b>apri la
+  sopravvivenza senza aver finito il mondo 1</b>, poi <b>un briefing di terreno
+  nuovo</b>. Gli effetti ti sembrano quelli della partita? L'animazione dei sei
+  colpi funziona meglio di prima?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Le tre animazioni: menu, lucchetto, vetrine."></textarea>
+</div>
+
+<div class="punto" data-nome="14 · la vetrina del rimbalzo — decisione">
+  <div class="testa"><span class="numero">14</span>
+    <span class="titolo">Adesso rispetta i muri — e le tue tre descrizioni erano sfasate</span>
+    <span class="tag nuovo">decisione</span></div>
+  <p class="cosa"><b>Il difetto era peggio di un disegno storto:</b> la scena
+  diceva due cose in contraddizione nello stesso fotogramma — la linea si fermava
+  contro il muro, il colpo ci passava attraverso. Chi la guarda per imparare una
+  regola impara che le regole non valgono. Adesso i numeri sono verificati da una
+  prova: il volo passa a sei decimi di casella dagli spigoli, e la linea
+  <b>diretta</b> fra i due carri ci finisce dentro in pieno.</p>
+  <p class="cosa"><b>E la linea disegnata è quella dello stadio annunciato.</b>
+  Invece delle tue tre descrizioni ho disegnato lo stadio <b>vero</b>, perché
+  questa vetrina non deve solo essere chiara, deve essere <b>vera</b>: annuncia
+  una regola che troverai in campo trenta secondi dopo.</p>
+  <p class="cosa"><b>Qui c'è lo scarto da decidere.</b> Le tue tre descrizioni
+  sono sfasate di una tappa rispetto a quel che il gioco fa davvero:</p>
+  <p class="cosa">· <b>Missione 4</b> — tu: «rimbalza ma si ferma poco dopo».
+  Il gioco: da lì in poi si vede <b>solo il punto di contatto</b>, senza
+  direzione di rimbalzo.<br>
+  · <b>Missione 16</b> — tu: «solo il punto di contatto». Il gioco: una linea
+  corta che <b>non arriva</b> al muro.<br>
+  · <b>Missione 25</b> — tu: «solo la direzione dal cannone». Il gioco: proprio
+  quello.</p>
+  <div class="chiedo"><b>Arriva alla missione 4</b> e guarda la vetrina. Va bene
+  così — cioè <b>la vetrina mostra quel che avrai davvero</b> — oppure vuoi che
+  la curva dell'aiuto si sposti di una tappa per combaciare con le tue tre
+  descrizioni?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Se la vetrina va bene così, o se vuoi spostare la curva dell'aiuto."></textarea>
+</div>
+
+<div class="punto" data-nome="15 · A SCORRIMENTO">
+  <div class="testa"><span class="numero">15</span>
+    <span class="titolo">La modalità nuova: il mondo scende, e tu devi risalire</span>
+    <span class="tag nuovo">nuovo</span></div>
+  <p class="cosa">C'è ed è giocabile: <b>Gioca → A scorrimento</b>. Non chiede
+  account e non chiede il mondo 1 finito.</p>
+  <p class="cosa">Il mondo è generato riga per riga — muri dei tre tipi, alberi,
+  cespugli — e scorre alla velocità del video di sfondo del menu. In fondo c'è il
+  <b>laser</b>: distrugge tutto quel che ci arriva, te compreso, e se resti fermo
+  il mondo ti ci porta. I nemici arrivano dall'alto fermi, uno ogni dieci secondi
+  e poi sempre più spesso, <b>mai più di cinque vivi insieme</b>; quelli che si
+  muovono <b>scappano dal laser</b> (la Sentinella no: sta dove nasce, e impari
+  che è un problema a tempo). Colpi, mine e mira come in sopravvivenza. Timer in
+  alto. Niente replay, solo statistiche.</p>
+  <p class="cosa"><b>Due numeri che non avevi chiesto e che ci volevano.</b> Un
+  fondo all'attesa fra i nemici (due secondi): senza, alla diciannovesima
+  comparsa sarebbe zero e da lì ne arriverebbe uno <b>a ogni tick</b>. E due
+  corsie sempre libere ai bordi: senza, una riga può nascere con un muro su ogni
+  colonna tranne una, e quella può capitare dove non arrivi in tempo — una morte
+  che non dipende da come giochi.</p>
+  <p class="cosa"><i>È nuova di oggi: l'equilibrio non è tarato e non può
+  esserlo. Quel che serve sapere adesso è se il <b>gesto</b> funziona.</i></p>
+  <div class="chiedo"><b>Giocaci qualche partita.</b> Si capisce subito cosa devi
+  fare? Il laser fa paura abbastanza? La velocità di scorrimento è giusta,
+  troppa o troppo poca? I nemici arrivano troppo in fretta o troppo piano? E i
+  muri che scendono: ti danno da pensare o ti incastrano e basta?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Il gesto, il laser, la velocità, i nemici, i muri."></textarea>
+</div>
+
+<div class="punto" data-nome="16 · il ritorno dal browser — decisione">
+  <div class="testa"><span class="numero">16</span>
+    <span class="titolo">Torna quasi da solo, e tornare del tutto costa una scelta</span>
+    <span class="tag nuovo">decisione</span></div>
+  <p class="cosa">Adesso la pagina prova a chiudersi da sola e, se non ci riesce,
+  mostra <b>un pulsante</b> invece di una frase da leggere. È il massimo che si
+  può fare a costo zero: su una scheda aperta dal browser stesso, Chrome
+  <b>rifiuta</b> di chiuderla — è una regola di sicurezza, non un nostro
+  difetto.</p>
+  <p class="cosa"><b>La cura vera ha un prezzo.</b> Serve un <code>intent-filter</code>
+  con <code>BROWSABLE</code> nel manifest Android, cioè accendere la
+  <b>build Gradle</b> anche per l'APK di ogni giorno. Significa: build più lente
+  (minuti invece di secondi), l'SDK Android come dipendenza fissa, e
+  probabilmente <b>una disinstallazione</b> sul tuo telefono al primo APK del
+  nuovo tipo. Il primo tentativo con <code>intent://</code> senza manifest aprì
+  <b>il Play Store</b>, ed è esattamente la ragione.</p>
+  <div class="chiedo"><b>Come preferisci?</b> <b>(a)</b> Lasciamo il pulsante e
+  ci pensiamo dopo il test chiuso. <b>(b)</b> Accendo la build Gradle adesso,
+  accettando build più lente. <b>(c)</b> Altro.</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="(a) pulsante, (b) build Gradle adesso, (c) altro."></textarea>
+</div>
+<div class="barra">
+  <button type="button" id="copia">Copia tutto</button>
+  <span id="esito"></span>
+</div>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var GIUDIZI = ["va bene", "così così", "non va", "non provato"];
+  var punti = Array.prototype.slice.call(document.querySelectorAll(".punto"));
+
+  punti.forEach(function (punto, indice) {
+    var dove = punto.querySelector(".giudizio");
+    if (!dove) { return; }
+    GIUDIZI.forEach(function (g) {
+      var lab = document.createElement("label");
+      var inp = document.createElement("input");
+      inp.type = "radio";
+      inp.name = "giudizio-" + indice;
+      inp.value = g;
+      lab.appendChild(inp);
+      lab.appendChild(document.createTextNode(g));
+      dove.appendChild(lab);
+    });
+  });
+
+  function testo() {
+    var righe = ["COLLAUDO QUATTORDICESIMO GIRO — 21 set · difetti chiusi, account, animazioni, modalità a scorrimento", ""];
+    var risposte = 0;
+    var saltati = [];
+
+    punti.forEach(function (punto, indice) {
+      var nome = punto.getAttribute("data-nome");
+      var scelto = punto.querySelector('input[name="giudizio-' + indice + '"]:checked');
+      var area = punto.querySelector("textarea");
+      var commento = area && area.value ? area.value.trim() : "";
+      var giudizio = scelto ? scelto.value : "";
+
+      if (!giudizio && !commento) {
+        saltati.push(nome);
+        return;
+      }
+      risposte += 1;
+      righe.push(nome + (giudizio ? "  [" + giudizio + "]" : ""));
+      if (commento) { righe.push("  " + commento.replace(/\n/g, "\n  ")); }
+      righe.push("");
+    });
+
+    righe.push("--------");
+    righe.push("risposti: " + risposte + " su " + punti.length);
+    righe.push(saltati.length ? "saltati: " + saltati.join(" | ") : "saltati: nessuno");
+    return righe.join("\n");
+  }
+
+  var esito = document.getElementById("esito");
+  document.getElementById("copia").addEventListener("click", function () {
+    var contenuto = testo();
+    function bene() { esito.textContent = "Copiato. Incollalo pure nella chat."; }
+    function male() {
+      esito.textContent = "Non riesco a copiare: seleziona il testo qui sotto.";
+      var area = document.createElement("textarea");
+      area.value = contenuto;
+      area.style.width = "100%";
+      area.style.height = "260px";
+      area.style.marginTop = "10px";
+      document.querySelector(".foglio").appendChild(area);
+      area.select();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(contenuto).then(bene, male);
+    } else {
+      male();
+    }
+  });
+})();
+</script>
+</body>
+</html>
