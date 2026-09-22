@@ -43,6 +43,12 @@
   }
   .tag.nuovo { background: #e7f0e9; border-color: #b6d3bf; color: #2b6b3f; }
   .tag.torna { background: #fdf1e3; border-color: #e8cfa9; color: #96660f; }
+  .dove {
+    margin: 8px 0 0; font-size: 13px; letter-spacing: .02em;
+    color: #4a5a6b; background: #eef2f6; border: 1px solid #d6dae0;
+    border-radius: 5px; padding: 5px 9px; display: inline-block;
+    font-weight: 600;
+  }
   .cosa { margin: 9px 0 0; }
   .chiedo { margin: 9px 0 0; padding: 9px 12px; background: #f7f9fb;
             border-left: 3px solid #c3c9d1; border-radius: 0 5px 5px 0; }
@@ -94,6 +100,9 @@ sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto son
   camminano i nemici.</p>
   <p><b>La modalità a scorrimento ha i tre difetti chiusi</b> (punto 5) e adesso
   i nemici combattono: prima erano fermi per sempre, e non era una scelta.</p>
+  <p><b>Ogni punto dice dov'è</b>, col percorso del gioco sotto al titolo — così
+  sai subito di che schermata si parla, e il percorso ti torna indietro insieme
+  alla risposta quando copi tutto.</p>
   <p>Rispondi solo a quel che provi. Quel che salti non conta come «va bene».</p>
 </div>
 
@@ -101,6 +110,7 @@ sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto son
   <div class="testa"><span class="numero">1</span>
     <span class="titolo">Avevi ragione: erano la stessa cosa con due nomi</span>
     <span class="tag torna">tuo riscontro</span></div>
+  <p class="dove">Casetta › Il tuo account</p>
   <p class="cosa"><i>«Mi sembra che "Esci dall'account" nel profilo e "Cancella
   account" in credits facciano la stessa cosa. È così?»</i> — <b>era così</b>, e
   quello era il difetto. La cura non era toglierne uno: era renderli diversi.</p>
@@ -137,6 +147,7 @@ sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto son
   <div class="testa"><span class="numero">2</span>
     <span class="titolo">Il nome in grande, e sotto con che cosa sei entrato</span>
     <span class="tag torna">tuo riscontro</span></div>
+  <p class="dove">Casetta › Il tuo account › Scegli il tuo nickname</p>
   <p class="cosa">La pagina è quella che hai disegnato: <b>{nickname}</b> in
   grande, e sotto <b>«Collegato a Google come {il tuo indirizzo}»</b>. Il
   doppione che al tredicesimo giro mi aveva fatto togliere il nome grande non
@@ -163,6 +174,7 @@ sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto son
   <div class="testa"><span class="numero">3</span>
     <span class="titolo">Ho misurato dove se ne andava il tempo, e ne ho tolto la fetta più grossa</span>
     <span class="tag torna">tuo riscontro</span></div>
+  <p class="dove">In partita · tutte le modalità</p>
   <p class="cosa"><i>«Si sentono ancora, analizza meglio la causa dei cali»</i>.
   Il diario della tua sopravvivenza delle 23:04 dice quanto costava ogni
   fotogramma, diviso in due voci: i tick della simulazione e <b>l'anteprima di
@@ -195,6 +207,7 @@ sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto son
   <div class="testa"><span class="numero">4</span>
     <span class="titolo">Non è più una tabella: è un pezzo di mondo che scorre di lato</span>
     <span class="tag nuovo">rifatta</span></div>
+  <p class="dove">Gioca › Campagna › Scegli livello</p>
   <p class="cosa">È quella che hai descritto. Un'arena alta quanto lo spazio
   utile e larga <b>una decina di schermate</b>: una fascia di terreno per mondo,
   le <b>strade verticali</b> a dividerli, <b>«MONDO 1»</b> in alto, un
@@ -255,6 +268,7 @@ sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto son
   <div class="testa"><span class="numero">5</span>
     <span class="titolo">I nemici adesso combattono, e i cingoli scendono col mondo</span>
     <span class="tag torna">tuo riscontro</span></div>
+  <p class="dove">Gioca › A scorrimento</p>
   <p class="cosa"><b>«I nemici sono tutti immobili e non attaccano»</b> — era
   vero, e il difetto stava in un commento. Nascevano fermi, come avevi chiesto,
   e c'era scritto che lo stato <i>«si scioglie da sé quando il nemico vede il
@@ -289,6 +303,7 @@ sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto son
   <div class="testa"><span class="numero">6</span>
     <span class="titolo">Non era finta: era vera, ed era peggio</span>
     <span class="tag torna">tuo riscontro</span></div>
+  <p class="dove">Gioca › Sopravvivenza › Classifica</p>
   <p class="cosa">Quella riga sola che compariva per un secondo era il tuo
   <b>primato vero</b>, messo lì come ponte fra l'apertura e la risposta del
   server. Ma <b>una classifica è un confronto</b>, e una classifica di una riga
@@ -310,6 +325,7 @@ sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto son
   <div class="testa"><span class="numero">7</span>
     <span class="titolo">I detriti scorrono, i carri non entrano più nelle casse</span>
     <span class="tag torna">tuo riscontro</span></div>
+  <p class="dove">Sfondo · tutte le schermate di menu</p>
   <p class="cosa"><b>I detriti fermi</b> avevano una causa precisa: il loro
   scorrimento era appoggiato all'<i>età</i> del rottame, e l'età di un rottame
   <b>smette di crescere</b> dopo tre decimi di secondo — giustamente, lì è un
@@ -332,6 +348,7 @@ sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto son
   <div class="testa"><span class="numero">8</span>
     <span class="titolo">I cingoli sono quelli della partita, e non restano da un livello all'altro</span>
     <span class="tag torna">tuo riscontro</span></div>
+  <p class="dove">Gioca › Campagna › briefing a inizio livello</p>
   <p class="cosa"><b>I cingoli della Pattuglia sotto il Rimbalzante</b> erano
   proprio quelli: la vetrina è <b>una sola</b> e vive per tutta la partita, e i
   solchi si buttavano solo a fine giro. La scena nuova nasceva con quelli della
@@ -353,6 +370,7 @@ sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto son
   <div class="testa"><span class="numero">9</span>
     <span class="titolo">La mira si tiene, e la mina non fa più aspettare</span>
     <span class="tag torna">tuo riscontro</span></div>
+  <p class="dove">Gioca › Campagna › Tutorial</p>
   <p class="cosa"><b>La mira</b> si chiudeva al primo fotogramma buono, e la
   tolleranza è larga: bastava passarci sopra girando. Adesso il bersaglio va
   <b>tenuto per trecento millesimi</b>, e chi molla ricomincia. Non è un'attesa:
@@ -373,6 +391,7 @@ sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto son
   <div class="testa"><span class="numero">10</span>
     <span class="titolo">Il tetto era di due secondi, e un colpo attraversa l'arena in sette</span>
     <span class="tag torna">tuo riscontro</span></div>
+  <p class="dove">In partita › Campagna · fine livello</p>
   <p class="cosa"><i>«Non sempre si attende che tutti i colpi in aria completino
   la loro corsa»</i>. Il «non sempre» aveva una causa esatta: l'attesa esisteva
   dal nono giro, ma aveva un tetto di <b>due secondi</b> — e il commento che lo
@@ -394,6 +413,7 @@ sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto son
   <div class="testa"><span class="numero">11</span>
     <span class="titolo">Quindici pixel più in alto e più a sinistra</span>
     <span class="tag torna">tuo riscontro</span></div>
+  <p class="dove">In partita · mira libera</p>
   <p class="cosa">Fatto come hai chiesto. È il terzo aggiustamento di questa
   posizione e vanno tutti nella stessa direzione: in mira libera il pollice
   trascina <b>verso il bersaglio</b>, e ogni pixel che la ✕ guadagna verso l'alto
@@ -409,6 +429,7 @@ sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto son
   <div class="testa"><span class="numero">12</span>
     <span class="titolo">«Torna a TinTitans» adesso apre l'app</span>
     <span class="tag torna">tuo riscontro</span></div>
+  <p class="dove">Casetta › Il tuo account › Entra con Google › pagina aperta nel browser</p>
   <p class="cosa">Faceva <code>history.back()</code>, che vuol dire letteralmente
   «torna indietro nel browser»: sulla pagina di Google prima di quella. E su una
   scheda appena aperta non c'è nemmeno un indietro dove andare, quindi non faceva
@@ -426,6 +447,7 @@ sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto son
   <div class="testa"><span class="numero">13</span>
     <span class="titolo">Ricontrollo: adesso che il gioco rallenta meno, si vede meglio?</span>
     <span class="tag torna">tuo riscontro</span></div>
+  <p class="dove">In partita › Sopravvivenza · ondate avanzate</p>
   <p class="cosa">Al giro scorso avevi scritto <i>«sembra andare meglio ma
   potrebbe migliorare»</i>, e avevi legato la cosa agli fps bassi. <b>Hai legato
   giusto</b>: gli echi si perdevano proprio quando il gioco arranca, e il rimedio
@@ -443,6 +465,7 @@ sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto son
   <div class="testa"><span class="numero">14</span>
     <span class="titolo">Il 37% del tick è lui. Ci mettiamo mano?</span>
     <span class="tag">decisione tua</span></div>
+  <p class="dove">In partita · tutte le modalità</p>
   <p class="cosa">A ogni passo l'Incursore <b>si ricalcola la strada visitando
   tutta l'arena</b>, duecentosettanta caselle, e lo fa più volte per tick. È il
   pezzo più grosso di quel che resta.</p>
@@ -466,6 +489,7 @@ sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto son
   <div class="testa"><span class="numero">15</span>
     <span class="titolo">Il resto</span>
     <span class="tag">libero</span></div>
+  <p class="dove">Ovunque</p>
   <p class="cosa">Qualunque cosa ti sia saltata all'occhio e non stia nei
   quattordici punti sopra: un difetto, una cosa che stona, un'idea.</p>
   <div class="chiedo">Se è un difetto, dimmi <b>dove eri</b> e <b>cosa stavi
@@ -514,6 +538,7 @@ sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto son
       var area = punto.querySelector("textarea");
       var commento = area && area.value ? area.value.trim() : "";
       var giudizio = scelto ? scelto.value : "";
+      var dove = punto.querySelector(".dove");
 
       if (!giudizio && !commento) {
         saltati.push(nome);
@@ -521,6 +546,9 @@ sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto son
       }
       risposte += 1;
       righe.push(nome + (giudizio ? "  [" + giudizio + "]" : ""));
+      // Il percorso viaggia col punto: chi legge la risposta incollata deve
+      // sapere di che schermata si parla senza riaprire il modulo.
+      if (dove) { righe.push("  dove: " + dove.textContent.trim()); }
       if (commento) { righe.push("  " + commento.replace(/\n/g, "\n  ")); }
       righe.push("");
     });
