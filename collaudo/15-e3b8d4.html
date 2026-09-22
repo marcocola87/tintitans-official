@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+<title>TinTitans — collaudo del quindicesimo giro</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0 16px 90px;
+    font: 16px/1.55 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1c1e21; background: #f4f5f7;
+  }
+  .foglio { max-width: 880px; margin: 0 auto; }
+  h1 { font-size: 26px; margin: 28px 0 4px; }
+  .sotto { color: #5b6169; margin: 0 0 20px; }
+  .nota {
+    background: #fff; border: 1px solid #d6dae0; border-left: 4px solid #4a7ab5;
+    border-radius: 6px; padding: 12px 16px; margin: 0 0 20px;
+  }
+  .nota p { margin: 6px 0; }
+  .nota p:first-child { margin-top: 0; }
+  .nota p:last-child { margin-bottom: 0; }
+  .punto {
+    background: #fff; border: 1px solid #d6dae0; border-radius: 8px;
+    padding: 14px 16px 16px; margin: 0 0 14px;
+  }
+  .testa { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .numero {
+    font: 700 15px/1 inherit; color: #fff; background: #4a7ab5;
+    border-radius: 999px; min-width: 26px; height: 26px;
+    display: inline-flex; align-items: center; justify-content: center;
+    flex: 0 0 auto;
+  }
+  .titolo { font-weight: 700; font-size: 17px; }
+  .tag {
+    font-size: 12px; text-transform: uppercase; letter-spacing: .04em;
+    background: #eceff3; border: 1px solid #d6dae0; border-radius: 4px;
+    padding: 2px 7px; color: #5b6169;
+  }
+  .tag.nuovo { background: #e7f0e9; border-color: #b6d3bf; color: #2b6b3f; }
+  .tag.torna { background: #fdf1e3; border-color: #e8cfa9; color: #96660f; }
+  .cosa { margin: 9px 0 0; }
+  .chiedo { margin: 9px 0 0; padding: 9px 12px; background: #f7f9fb;
+            border-left: 3px solid #c3c9d1; border-radius: 0 5px 5px 0; }
+  .chiedo b { color: #1c1e21; }
+  .giudizio { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .giudizio label {
+    border: 1px solid #c3c9d1; border-radius: 999px; padding: 7px 14px;
+    cursor: pointer; background: #fcfcfd; font-size: 15px;
+  }
+  .giudizio input { margin-right: 7px; }
+  textarea {
+    width: 100%; margin-top: 10px; min-height: 74px; padding: 9px 11px;
+    font: inherit; font-size: 15px; border: 1px solid #c3c9d1;
+    border-radius: 5px; background: #fcfcfd; resize: vertical;
+  }
+  textarea:focus, .giudizio label:focus-within {
+    outline: 2px solid #4a7ab5; outline-offset: -1px;
+  }
+  .barra {
+    position: sticky; bottom: 0; margin: 26px -16px 0; padding: 12px 16px;
+    background: #fffffff2; border-top: 1px solid #d6dae0;
+    display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+    backdrop-filter: blur(4px);
+  }
+  button {
+    font: 600 15px/1 inherit; padding: 12px 20px; border-radius: 6px;
+    border: 1px solid #33619b; background: #4a7ab5; color: #fff; cursor: pointer;
+  }
+  button:hover { background: #3d6aa1; }
+  #esito { color: #2b6b3f; font-weight: 600; }
+  code { font: 14px/1.4 ui-monospace, Consolas, monospace;
+         background: #eceff3; border-radius: 3px; padding: 1px 5px; }
+</style>
+</head>
+<body>
+<div class="foglio">
+<h1>Collaudo del quindicesimo giro</h1>
+<p class="sotto">Build di sviluppo <code>0dcf13e</code>, installata alle 07:13. Quindici punti: due
+sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto sono i difetti che hai trovato col pollice.</p>
+
+<div class="nota">
+  <p><b>Due cose sono state rifatte, non ritoccate.</b> L'account adesso ha due
+  funzioni davvero diverse (punto 1), e la pagina dei livelli non è più una
+  tabella: è un pezzo di mondo che scorre di lato (punto 4). Su quelle due mi
+  serve il tuo occhio più che altrove.</p>
+  <p><b>Sulle prestazioni ci sono numeri, non impressioni</b> — punto 3. Ho
+  misurato dove se ne andava il tempo e ne ho tolto la fetta più grossa. Quel
+  che resta te lo dico in chiaro, perché toccarlo vuol dire toccare come
+  camminano i nemici.</p>
+  <p><b>La modalità a scorrimento ha i tre difetti chiusi</b> (punto 5) e adesso
+  i nemici combattono: prima erano fermi per sempre, e non era una scelta.</p>
+  <p>Rispondi solo a quel che provi. Quel che salti non conta come «va bene».</p>
+</div>
+
+<div class="punto" data-nome="1 · Log-out e Cancella dati utente">
+  <div class="testa"><span class="numero">1</span>
+    <span class="titolo">Avevi ragione: erano la stessa cosa con due nomi</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa"><i>«Mi sembra che "Esci dall'account" nel profilo e "Cancella
+  account" in credits facciano la stessa cosa. È così?»</i> — <b>era così</b>, e
+  quello era il difetto. La cura non era toglierne uno: era renderli diversi.</p>
+  <p class="cosa"><b>Log-out</b> scollega e basta. Le partite salvate su questo
+  telefono <b>restano tutte</b> — campagna, livelli, primati, corse a metà — e
+  sul server non cambia niente: rientrando ritrovi tutto. <i>(Questo ribalta
+  quel che mi avevi chiesto al tredicesimo giro. Hai ragione a cambiare idea:
+  allora le due funzioni erano una sola, e cancellare era l'unico comportamento
+  che restasse.)</i></p>
+  <p class="cosa"><b>Cancella dati utente</b> fa i tre passi nel tuo ordine:
+  svuota il server <b>liberando il nickname</b>, poi scollega, poi cancella anche
+  le partite e i dati personali di questo telefono. Il server per primo perché è
+  l'unico passo che può fallire: se cade la rete non è successo niente da nessuna
+  parte, e si riprova.</p>
+  <p class="cosa">Tutti e due stanno nella <b>pagina dell'account</b>, il rosso
+  sopra «Indietro». Il collegamento è sparito dai crediti, dove resta solo la
+  privacy. <i>(Google Play vuole due strade per cancellare, una nell'app e una
+  sul web: prima erano tutte e due nei crediti — due porte sullo stesso
+  corridoio. Adesso sono davvero due.)</i></p>
+  <p class="cosa"><b>Una cosa che ho lasciato fuori, dimmi se sbaglio:</b> la
+  cancellazione <b>non</b> tocca volume, lingua, modalità di mira e taratura.
+  Non sono dati di un account, sono come è regolato questo telefono — e
+  cancellarle vorrebbe dire ritrovarsi il gioco in inglese a metà frase.</p>
+  <div class="chiedo"><b>Prova il log-out con una campagna avviata e una
+  sopravvivenza sospesa.</b> Le partite ci sono ancora? «Riprendi» della
+  sopravvivenza è spento finché non rientri? E rientrando ritrovi nickname,
+  skin e classifica?<br><b>La cancellazione provala per ultima</b>, che non si
+  torna indietro.</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Cosa resta dopo il log-out, e se la cancellazione porta via tutto."></textarea>
+</div>
+
+<div class="punto" data-nome="2 · la pagina del profilo e il nickname">
+  <div class="testa"><span class="numero">2</span>
+    <span class="titolo">Il nome in grande, e sotto con che cosa sei entrato</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa">La pagina è quella che hai disegnato: <b>{nickname}</b> in
+  grande, e sotto <b>«Collegato a Google come {il tuo indirizzo}»</b>. Il
+  doppione che al tredicesimo giro mi aveva fatto togliere il nome grande non
+  c'è più, perché adesso la riga sotto dice l'<b>indirizzo</b> e non il nome.</p>
+  <p class="cosa">La parola «Google» è una voce del dizionario, non una parola
+  dentro una frase: il giorno del secondo metodo di accesso si aggiunge una riga
+  e basta. E l'indirizzo <b>si cancella dal telefono col log-out</b>.</p>
+  <p class="cosa">Il <b>nickname è in due passi</b>, come hai chiesto: prima le
+  regole con il collegamento alla privacy e «Accetto e prosegui», poi il campo
+  col tasto <b>«Salva»</b> alla sua destra. «Indietro» in fondo in tutti e due.
+  <i>(Stavano in fondo, ed era il posto giusto finché non c'era la tastiera: si
+  apre dal basso e si prendeva metà schermo, cioè proprio le regole da leggere.)</i></p>
+  <p class="cosa">E <b>«Indietro» dal nickname torna all'account</b>, non alla
+  classifica: quel difetto era una porta contata per esclusione — c'erano due
+  ingressi e il terzo, il tuo tasto nell'account, non l'aveva contato nessuno.</p>
+  <div class="chiedo"><b>Account → Scegli il tuo nickname.</b> Le regole si
+  leggono senza tastiera davanti? «Accetto e prosegui» apre il campo con «Salva»
+  accanto? E «Indietro» ti riporta all'account?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="I due passi del nickname, e dove porta Indietro."></textarea>
+</div>
+
+<div class="punto" data-nome="3 · le prestazioni">
+  <div class="testa"><span class="numero">3</span>
+    <span class="titolo">Ho misurato dove se ne andava il tempo, e ne ho tolto la fetta più grossa</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa"><i>«Si sentono ancora, analizza meglio la causa dei cali»</i>.
+  Il diario della tua sopravvivenza delle 23:04 dice quanto costava ogni
+  fotogramma, diviso in due voci: i tick della simulazione e <b>l'anteprima di
+  mira</b>. Nei fotogrammi peggiori l'anteprima costava <b>13 millesimi da
+  sola</b> — più dei tick.</p>
+  <p class="cosa"><b>La causa era una fedeltà che serviva a una prova e non al
+  disegno.</b> La linea di mira si calcola facendo volare un proiettile vero, e
+  segnava <b>un punto per ogni tick di volo</b>: duecentoquaranta punti per una
+  riga dritta lunga sei caselle. Su quei duecentoquaranta punti poi si misurava
+  la lunghezza con una radice ciascuno, e si controllava <b>ogni punto contro
+  ogni nemico</b> — tremila equazioni a fotogramma.</p>
+  <p class="cosa">Adesso la spezzata ha i vertici dove la strada <b>gira</b>, e
+  basta. Misurato: la linea dei primi tre livelli da <b>1,07 a 0,27
+  millesimi</b>, quella corta della sopravvivenza da <b>0,56 a 0,14</b>. E il
+  tick è sceso da 410 a 354 microsecondi di mediana.</p>
+  <p class="cosa"><b>Quel che resta, in chiaro:</b> il <b>37% del tick è
+  l'Incursore</b>, che a ogni passo si ricalcola la strada visitando tutta
+  l'arena. Si può fare di meglio, ma vuol dire mettere le mani in <i>come
+  cammina</i> — e quello cambia le partite e invalida i replay registrati. Se
+  dopo questo giro gli fps ti sembrano ancora bassi, è lì che andiamo, e lo
+  facciamo sapendo cosa costa.</p>
+  <div class="chiedo"><b>Gioca una sopravvivenza lunga, fino all'ondata 8 o
+  oltre.</b> Il numero degli fps in alto quanto scende adesso? E si <i>sente</i>
+  la differenza col pollice, o solo nel numero?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="A quanti fps scende nelle ondate avanzate, e se si sente."></textarea>
+</div>
+
+<div class="punto" data-nome="4 · la pagina dei livelli">
+  <div class="testa"><span class="numero">4</span>
+    <span class="titolo">Non è più una tabella: è un pezzo di mondo che scorre di lato</span>
+    <span class="tag nuovo">rifatta</span></div>
+  <p class="cosa">È quella che hai descritto. Un'arena alta quanto lo spazio
+  utile e larga <b>una decina di schermate</b>: una fascia di terreno per mondo,
+  le <b>strade verticali</b> a dividerli, <b>«MONDO 1»</b> in alto, un
+  <b>carroarmatino per livello</b> col numero sopra — colorato se aperto, grigio
+  desaturato se chiuso — e fra l'uno e l'altro i <b>cingoli che curvano</b>
+  lungo una bezier. Si scorre con lo swipe, senza barra né frecce.</p>
+  <p class="cosa">Il carro è <b>il tuo</b>, con la skin che hai scelto, e i
+  cingoli del percorso sono <b>gli stessi segni della partita</b>: la forma di un
+  segno adesso la decide un posto solo.</p>
+  <p class="cosa"><b>E i numeri non spariscono più al bordo.</b> Avevi visto
+  giusto: la sfumatura si applicava <i>a ogni cosa per conto suo</i>, e i numeri
+  erano disegnati fuori da quel giro. Adesso si disegna tutto pieno e poi si
+  passa il fondo sopra i due bordi — una maschera non si dimentica di niente.</p>
+  <div class="chiedo"><b>Gioca → Campagna → Scegli livello.</b> Si legge a colpo
+  d'occhio dove sei arrivato? Lo swipe va come ti aspetti? I numeri restano
+  leggibili anche ai bordi? E toccare un carroarmatino apre il livello giusto —
+  senza partire per sbaglio mentre scorri?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Come si legge, come scorre, e se i numeri tengono ai bordi."></textarea>
+</div>
+
+<div class="punto" data-nome="5 · A scorrimento">
+  <div class="testa"><span class="numero">5</span>
+    <span class="titolo">I nemici adesso combattono, e i cingoli scendono col mondo</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa"><b>«I nemici sono tutti immobili e non attaccano»</b> — era
+  vero, e il difetto stava in un commento. Nascevano fermi, come avevi chiesto,
+  e c'era scritto che lo stato <i>«si scioglie da sé quando il nemico vede il
+  giocatore»</i>. Non era vero: non lo scioglieva nessuno. Restavano cinque
+  bersagli che scendevano verso il laser senza tirare un colpo.</p>
+  <p class="cosa">Adesso si svegliano <b>quando sono entrati tutti in campo</b>,
+  e non prima: un colpo che arriva da fuori schermo è la cosa più ingiusta che un
+  gioco d'azione possa fare.</p>
+  <p class="cosa"><b>Gli elementi nascono sopra lo schermo</b>, come hai chiesto:
+  l'arena è alta <b>una riga più di quel che si vede</b>, e in quella riga nasce
+  tutto. Non è disegno nascosto, è mondo vero — un nemico lì dentro si muove e
+  spara come dappertutto.</p>
+  <p class="cosa"><b>I cingoli scendono col mondo.</b> <i>«Non seguono il mondo,
+  rimangono visibili, si spostano a scatti»</i>: tre sintomi di un difetto solo.
+  Lì il mondo non scorre, si <b>ricicla</b> — la griglia scende di una riga e le
+  entità con lei — e i solchi non stanno nella simulazione, quindi non li
+  spostava nessuno. Saltavano in su di una casella ogni 2,8 secondi.</p>
+  <p class="cosa"><b>E ho trovato un intruso che non avevi visto:</b> la modalità
+  si portava dietro <b>i nemici del livello usato come stampo</b>. Uno o due
+  carri piazzati a caso, vivi e svegli dal primo tick, in un campo che per il
+  resto era vuoto. Non si notava finché gli altri erano fermi: era l'unico che si
+  muovesse, e sembrava la modalità che funzionava a metà.</p>
+  <div class="chiedo"><b>Gioca due o tre corse.</b> I nemici si comportano
+  ognuno secondo il suo archetipo? Le tracce dei cingoli scendono lisce col
+  prato? Muri e carri entrano scivolando dall'alto invece di comparire? E il
+  campo comincia vuoto davvero?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Come si comportano i nemici, e se lo scorrimento è liscio."></textarea>
+</div>
+
+<div class="punto" data-nome="6 · la classifica che aspetta">
+  <div class="testa"><span class="numero">6</span>
+    <span class="titolo">Non era finta: era vera, ed era peggio</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa">Quella riga sola che compariva per un secondo era il tuo
+  <b>primato vero</b>, messo lì come ponte fra l'apertura e la risposta del
+  server. Ma <b>una classifica è un confronto</b>, e una classifica di una riga
+  sola dice «sei primo»: per un secondo leggevi una cosa falsa, nel momento in
+  cui contava.</p>
+  <p class="cosa">Adesso c'è <b>un'attesa che si vede girare</b> finché il server
+  non risponde. Il primato locale resta per il caso in cui il server <b>non</b>
+  risponde — che è un'altra domanda, e lì una riga sola è meglio di niente.</p>
+  <p class="cosa">E <b>chi non si è mai collegato non la vede mai</b>: non è in
+  nessuna classifica, quindi quel numero non sarebbe «la sua posizione».</p>
+  <div class="chiedo"><b>Apri la classifica un paio di volte.</b> Vedi ancora
+  lampeggiare una classifica di una riga sola? L'attesa che gira ti sembra
+  chiara o fastidiosa?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Se il lampo di prima è sparito, e come ti sembra l'attesa."></textarea>
+</div>
+
+<div class="punto" data-nome="7 · lo sfondo del menu">
+  <div class="testa"><span class="numero">7</span>
+    <span class="titolo">I detriti scorrono, i carri non entrano più nelle casse</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa"><b>I detriti fermi</b> avevano una causa precisa: il loro
+  scorrimento era appoggiato all'<i>età</i> del rottame, e l'età di un rottame
+  <b>smette di crescere</b> dopo tre decimi di secondo — giustamente, lì è un
+  numero che non serve più a nessuno. Scendevano otto pixel e si piantavano. Il
+  fumo no, e infatti quello scorreva.</p>
+  <p class="cosa"><b>I carri dentro i muri e quelli che giravano su sé stessi
+  erano lo stesso difetto.</b> Paesaggio e carri scendono insieme, quindi un
+  carro non può <i>entrare</i> in una cassa camminando: era la cassa a
+  <b>nascergli addosso</b>, perché le righe nuove si inventano in cima e nessuno
+  guardava chi c'era. Da lì in poi trovava occupata ogni direzione, compresa
+  quella da cui era venuto, e girare sul posto era l'unica cosa che gli restava.</p>
+  <div class="chiedo"><b>Resta un minuto nel menu a guardare.</b> I rottami
+  scendono col prato? Vedi ancora carri dentro le casse o che girano su sé
+  stessi?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="I detriti, e i carri incastrati."></textarea>
+</div>
+
+<div class="punto" data-nome="8 · le animazioni del briefing">
+  <div class="testa"><span class="numero">8</span>
+    <span class="titolo">I cingoli sono quelli della partita, e non restano da un livello all'altro</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa"><b>I cingoli della Pattuglia sotto il Rimbalzante</b> erano
+  proprio quelli: la vetrina è <b>una sola</b> e vive per tutta la partita, e i
+  solchi si buttavano solo a fine giro. La scena nuova nasceva con quelli della
+  vecchia addosso e se li teneva per i quattro secondi del primo giro — il tuo
+  <i>«per qualche istante»</i>.</p>
+  <p class="cosa"><b>E non erano nemmeno quelli della partita</b>, come avevi
+  detto. C'erano <b>due disegni della stessa cosa</b>, uno in partita e uno nella
+  vetrina, con <b>tre numeri diversi su tre</b>: il raggio, la lunghezza del
+  segno, lo scostamento di lato. Adesso la forma di un segno la decide un posto
+  solo, e tutti e due gliela chiedono.</p>
+  <div class="chiedo"><b>Comincia una campagna dall'inizio e arriva al mondo
+  2.</b> All'inizio di w2-01 vedi ancora cingoli che spariscono? E quelli di
+  w1-06 ti sembrano gli stessi che lasci tu giocando?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Cingoli fantasma, e se i segni sono quelli veri."></textarea>
+</div>
+
+<div class="punto" data-nome="9 · il tutorial">
+  <div class="testa"><span class="numero">9</span>
+    <span class="titolo">La mira si tiene, e la mina non fa più aspettare</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa"><b>La mira</b> si chiudeva al primo fotogramma buono, e la
+  tolleranza è larga: bastava passarci sopra girando. Adesso il bersaglio va
+  <b>tenuto per trecento millesimi</b>, e chi molla ricomincia. Non è un'attesa:
+  è la differenza fra sfiorare e puntare, che è quel che quel passo insegna.
+  <i>(In pratica: si lascia la freccia prima del bersaglio e la canna ci arriva
+  in frenata — che è esattamente come si mira in partita.)</i></p>
+  <p class="cosa"><b>La mina</b> aspettava cinque secondi dopo essersi armata.
+  Adesso <b>trecento millesimi</b>, come hai chiesto. Non zero: il carro deve
+  comparire <i>dopo</i> la mina e non insieme, o non si capisce che è la mina ad
+  averlo preso.</p>
+  <div class="chiedo"><b>Rifai il tutorial.</b> Il passo della mira ti lascia il
+  tempo di prendere la mira bene? E dopo la mina il nemico arriva subito?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Il passo della mira e quello della mina."></textarea>
+</div>
+
+<div class="punto" data-nome="10 · i colpi in aria a fine livello">
+  <div class="testa"><span class="numero">10</span>
+    <span class="titolo">Il tetto era di due secondi, e un colpo attraversa l'arena in sette</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa"><i>«Non sempre si attende che tutti i colpi in aria completino
+  la loro corsa»</i>. Il «non sempre» aveva una causa esatta: l'attesa esisteva
+  dal nono giro, ma aveva un tetto di <b>due secondi</b> — e il commento che lo
+  giustificava aveva sbagliato il conto, perché un colpo fa tre caselle al
+  secondo e l'arena è larga ventuno. Due secondi bastavano a un tiro corto e
+  tagliavano tutti gli altri.</p>
+  <p class="cosa">Adesso il tetto copre <b>un volo intero</b> — due traversate,
+  che è il massimo che un colpo può fare prima di dissolversi — e si conta
+  <b>dall'ultimo colpo partito</b>, non dall'inizio dell'attesa: un colpo appena
+  sparato ha davanti tutta la sua strada.</p>
+  <div class="chiedo"><b>Uccidi l'ultimo nemico con un tiro lungo di sponda, o
+  spara subito dopo averlo ucciso.</b> Il livello aspetta che il colpo atterri?
+  E non aspetta troppo?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Se i colpi finiscono la loro corsa, e se l'attesa è giusta."></textarea>
+</div>
+
+<div class="punto" data-nome="11 · la X della mira libera">
+  <div class="testa"><span class="numero">11</span>
+    <span class="titolo">Quindici pixel più in alto e più a sinistra</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa">Fatto come hai chiesto. È il terzo aggiustamento di questa
+  posizione e vanno tutti nella stessa direzione: in mira libera il pollice
+  trascina <b>verso il bersaglio</b>, e ogni pixel che la ✕ guadagna verso l'alto
+  a sinistra è un pixel in meno di rischio di annullare un tiro preparato.</p>
+  <div class="chiedo"><b>Gioca qualche livello in mira libera.</b> Ti capita
+  ancora di annullare per sbaglio? La ✕ resta comunque facile da trovare quando
+  la vuoi?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Se annulli ancora per sbaglio, e se la trovi quando serve."></textarea>
+</div>
+
+<div class="punto" data-nome="12 · il ritorno dal browser">
+  <div class="testa"><span class="numero">12</span>
+    <span class="titolo">«Torna a TinTitans» adesso apre l'app</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa">Faceva <code>history.back()</code>, che vuol dire letteralmente
+  «torna indietro nel browser»: sulla pagina di Google prima di quella. E su una
+  scheda appena aperta non c'è nemmeno un indietro dove andare, quindi non faceva
+  niente.</p>
+  <p class="cosa">Adesso è un <b>intent</b>, che su Android è il modo di dire a
+  un browser «apri quest'altra applicazione». Non serve ricompilare con Gradle —
+  quella resta parcheggiata come hai deciso al punto 16.</p>
+  <div class="chiedo"><b>Fai log-out e rientra con Google.</b> Il tasto «Torna a
+  TinTitans» ti riporta nel gioco?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Se il tasto riapre l'app."></textarea>
+</div>
+
+<div class="punto" data-nome="13 · la morte senza esplosione">
+  <div class="testa"><span class="numero">13</span>
+    <span class="titolo">Ricontrollo: adesso che il gioco rallenta meno, si vede meglio?</span>
+    <span class="tag torna">tuo riscontro</span></div>
+  <p class="cosa">Al giro scorso avevi scritto <i>«sembra andare meglio ma
+  potrebbe migliorare»</i>, e avevi legato la cosa agli fps bassi. <b>Hai legato
+  giusto</b>: gli echi si perdevano proprio quando il gioco arranca, e il rimedio
+  del giro scorso li accumula su tutti i tick di un fotogramma.</p>
+  <p class="cosa">Non ho toccato altro lì dentro: quel che è cambiato è che il
+  fotogramma costa meno (punto 3), quindi i tick da recuperare sono meno. Se il
+  difetto si vede ancora, vuol dire che non era solo quello.</p>
+  <div class="chiedo"><b>Fatti colpire nelle ondate avanzate.</b> L'esplosione
+  c'è sempre, e i suoni sono al loro posto?</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Se la morte si vede sempre adesso."></textarea>
+</div>
+
+<div class="punto" data-nome="14 · l'Incursore — decisione">
+  <div class="testa"><span class="numero">14</span>
+    <span class="titolo">Il 37% del tick è lui. Ci mettiamo mano?</span>
+    <span class="tag">decisione tua</span></div>
+  <p class="cosa">A ogni passo l'Incursore <b>si ricalcola la strada visitando
+  tutta l'arena</b>, duecentosettanta caselle, e lo fa più volte per tick. È il
+  pezzo più grosso di quel che resta.</p>
+  <p class="cosa"><b>(a) Lasciamo stare per ora.</b> Con l'anteprima sistemata
+  gli fps dovrebbero già bastare. Costo: zero. Rischio: se nelle ondate molto
+  avanzate arranca ancora, arranca.</p>
+  <p class="cosa"><b>(b) Ci mettiamo mano.</b> Si può ricordare la strada invece
+  di rifarla, e ricalcolarla solo quando il mondo cambia davvero. Costo: mezza
+  giornata. <b>Rischio da sapere:</b> se cambia anche di un passo <i>come
+  cammina</i>, le partite non sono più le stesse e <b>i replay registrati finora
+  diventano illeggibili</b> — classifica compresa.</p>
+  <p class="cosa"><b>(c) Ci mettiamo mano dopo il test chiuso</b>, quando buttare
+  via i replay dei tester non costa niente a nessuno.</p>
+  <div class="chiedo"><b>Scegli (a), (b) o (c)</b>, e se puoi dimmi a quanti fps
+  scende adesso nelle ondate avanzate: è il numero che fa la scelta.</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="(a), (b) o (c), e gli fps che vedi."></textarea>
+</div>
+
+<div class="punto" data-nome="15 · quel che non torna">
+  <div class="testa"><span class="numero">15</span>
+    <span class="titolo">Il resto</span>
+    <span class="tag">libero</span></div>
+  <p class="cosa">Qualunque cosa ti sia saltata all'occhio e non stia nei
+  quattordici punti sopra: un difetto, una cosa che stona, un'idea.</p>
+  <div class="chiedo">Se è un difetto, dimmi <b>dove eri</b> e <b>cosa stavi
+  facendo</b>: metà del lavoro di trovarlo è quello.</div>
+  <div class="giudizio"></div>
+  <textarea placeholder="Tutto il resto."></textarea>
+</div>
+
+<div class="barra">
+  <button type="button" id="copia">Copia tutto</button>
+  <span id="esito"></span>
+</div>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var GIUDIZI = ["va bene", "così così", "non va", "non provato"];
+  var punti = Array.prototype.slice.call(document.querySelectorAll(".punto"));
+
+  punti.forEach(function (punto, indice) {
+    var dove = punto.querySelector(".giudizio");
+    if (!dove) { return; }
+    GIUDIZI.forEach(function (g) {
+      var lab = document.createElement("label");
+      var inp = document.createElement("input");
+      inp.type = "radio";
+      inp.name = "giudizio-" + indice;
+      inp.value = g;
+      lab.appendChild(inp);
+      lab.appendChild(document.createTextNode(g));
+      dove.appendChild(lab);
+    });
+  });
+
+  function testo() {
+    var righe = ["COLLAUDO QUINDICESIMO GIRO — 22 set · account rifatto, pagina dei livelli nuova, prestazioni", ""];
+    var risposte = 0;
+    var saltati = [];
+
+    punti.forEach(function (punto, indice) {
+      var nome = punto.getAttribute("data-nome");
+      var scelto = punto.querySelector('input[name="giudizio-' + indice + '"]:checked');
+      var area = punto.querySelector("textarea");
+      var commento = area && area.value ? area.value.trim() : "";
+      var giudizio = scelto ? scelto.value : "";
+
+      if (!giudizio && !commento) {
+        saltati.push(nome);
+        return;
+      }
+      risposte += 1;
+      righe.push(nome + (giudizio ? "  [" + giudizio + "]" : ""));
+      if (commento) { righe.push("  " + commento.replace(/\n/g, "\n  ")); }
+      righe.push("");
+    });
+
+    righe.push("--------");
+    righe.push("risposti: " + risposte + " su " + punti.length);
+    righe.push(saltati.length ? "saltati: " + saltati.join(" | ") : "saltati: nessuno");
+    return righe.join("\n");
+  }
+
+  var esito = document.getElementById("esito");
+  document.getElementById("copia").addEventListener("click", function () {
+    var contenuto = testo();
+    function bene() { esito.textContent = "Copiato. Incollalo pure nella chat."; }
+    function male() {
+      esito.textContent = "Non riesco a copiare: seleziona il testo qui sotto.";
+      var area = document.createElement("textarea");
+      area.value = contenuto;
+      area.style.width = "100%";
+      area.style.height = "260px";
+      area.style.marginTop = "10px";
+      document.querySelector(".foglio").appendChild(area);
+      area.select();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(contenuto).then(bene, male);
+    } else {
+      male();
+    }
+  });
+})();
+</script>
+</body>
+</html>
