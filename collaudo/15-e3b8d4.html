@@ -80,7 +80,7 @@
 <body>
 <div class="foglio">
 <h1>Collaudo del quindicesimo giro</h1>
-<p class="sotto">Build di sviluppo <code>0dcf13e</code>, installata alle 07:13. Quindici punti: due
+<p class="sotto">Build di sviluppo <code>75f709a</code>, installata alle 10:01. Quindici punti: due
 sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto sono i difetti che hai trovato col pollice.</p>
 
 <div class="nota">
@@ -201,19 +201,54 @@ sono rifacimenti grossi — l'account e la pagina dei livelli — e il resto son
   <b>carroarmatino per livello</b> col numero sopra — colorato se aperto, grigio
   desaturato se chiuso — e fra l'uno e l'altro i <b>cingoli che curvano</b>
   lungo una bezier. Si scorre con lo swipe, senza barra né frecce.</p>
-  <p class="cosa">Il carro è <b>il tuo</b>, con la skin che hai scelto, e i
-  cingoli del percorso sono <b>gli stessi segni della partita</b>: la forma di un
-  segno adesso la decide un posto solo.</p>
+
+  <p class="cosa"><b>I numeri hanno il carattere del logo, e non c'era.</b>
+  <i>«Troviamo un font simile a quello del logo»</i> — solo che il titolo del
+  gioco <b>non è un font</b>: è un SVG disegnato a mano, sette tratti spessi
+  cinquantotto unità con un contorno scuro sotto e i rivetti ai capi. Non c'era
+  nessun carattere da cui pescare le cifre, quindi le ho disegnate: dieci cifre e
+  le quattordici lettere che il gioco scrive davvero, nelle stesse tre passate.
+  <b>A tratti e non come immagini</b>, che è l'altra metà di quel che hai detto:
+  dieci PNG vorrebbero dire una risoluzione scelta a priori — e questi numeri
+  stanno sopra un carro che su uno schermo grande è il doppio che su uno piccolo
+  — e nessun modo di farli grigi quando il livello è chiuso.</p>
+  <p class="cosa"><b>La leggibilità la fa il contorno scuro</b>, non il colore:
+  prima erano grigio chiaro su verde chiaro, due toni vicini senza niente in
+  mezzo. E adesso <b>c'è posto per il numero sopra ogni carro</b> — quello più in
+  alto non tocca più il bordo della fascia, o il suo numero finiva fuori.</p>
+
+  <p class="cosa"><b>I carri sono sparsi, non in fila.</b> <i>«Non deve avere
+  coerenze geometriche (uno sopra e uno sotto)»</i>: hai visto giusto, erano su
+  un'onda. Elegante e sbagliato — un'onda <b>ha</b> un ritmo, e il ritmo dice che
+  qualcuno li ha messi in fila. Adesso le altezze le decide un rimescolamento di
+  bit: sparso davvero, e <b>sempre lo stesso</b>, perché la pagina si ridisegna a
+  ogni fotogramma e un sorteggio vero farebbe vibrare tutta la fila. Il percorso
+  li segue, e le maniglie della curva fanno uscire i cingoli in piano dal carro:
+  un cingolato non sbanda, curva.</p>
+  <p class="cosa"><b>E ognuno è girato per conto suo</b>, scafo e cannone con due
+  angoli diversi.</p>
+
+  <p class="cosa"><b>Il paesaggio non copre più niente.</b> <i>«Niente alberi o
+  muri attraversati o sovrapposti»</i>. Si seminava mondo per mondo, <b>mentre i
+  carri di quel mondo non erano ancora a posto</b> e il percorso non esisteva:
+  un albero non poteva sapere di stare addosso a un carro, perché il carro non
+  c'era ancora. Adesso si semina per ultimo, su un campo finito, e si scarta quel
+  che tocca un carro o passa sui cingoli. Ho aggiunto anche <b>qualche
+  barricata</b>, come dicevi.</p>
+
   <p class="cosa"><b>E i numeri non spariscono più al bordo.</b> Avevi visto
-  giusto: la sfumatura si applicava <i>a ogni cosa per conto suo</i>, e i numeri
-  erano disegnati fuori da quel giro. Adesso si disegna tutto pieno e poi si
-  passa il fondo sopra i due bordi — una maschera non si dimentica di niente.</p>
-  <div class="chiedo"><b>Gioca → Campagna → Scegli livello.</b> Si legge a colpo
-  d'occhio dove sei arrivato? Lo swipe va come ti aspetti? I numeri restano
-  leggibili anche ai bordi? E toccare un carroarmatino apre il livello giusto —
-  senza partire per sbaglio mentre scorri?</div>
+  giusto anche lì: la sfumatura si applicava <i>a ogni cosa per conto suo</i>, e
+  i numeri erano disegnati fuori da quel giro. Adesso si disegna tutto pieno e
+  poi si passa il fondo sopra i due bordi — una maschera non si dimentica di
+  niente.</p>
+
+  <div class="chiedo"><b>Gioca → Campagna → Scegli livello, e scorri fino ai
+  livelli di prova.</b> I numeri si leggono su <i>tutti</i> i livelli di tutti i
+  mondi? Le cifre ti sembrano della stessa famiglia del titolo? I carri sono
+  sparsi come volevi? E trovi ancora un albero o un muro addosso a un carro o in
+  mezzo ai cingoli?</div>
   <div class="giudizio"></div>
-  <textarea placeholder="Come si legge, come scorre, e se i numeri tengono ai bordi."></textarea>
+  <textarea placeholder="I numeri, la dispersione dei carri, e se qualcosa si sovrappone ancora."></textarea>
 </div>
 
 <div class="punto" data-nome="5 · A scorrimento">
